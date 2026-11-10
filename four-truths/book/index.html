@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>四聖諦｜SutraZen 翻頁繪本</title>
+<link rel="stylesheet" href="book.css?v=7">
+<script src="scenes.js?v=6" defer></script>
+<script src="book.js?v=7" defer></script>
+</head>
+<body>
+<header class="top">
+  <a href="../"><span class="portrait-label">‹ 四聖諦導讀</span><span class="landscape-only">‹ 回簡介</span></a>
+  <span>SutraZen · 佛法繪本</span>
+</header>
+<main class="reader">
+  <h1 class="sr-only">四聖諦翻頁繪本</h1>
+  <article class="page" aria-labelledby="page-title">
+    <div class="scene">
+      <h2 id="page-title" class="sr-only">森林與象足印</h2>
+      <div class="story band" id="caption" aria-live="polite" aria-atomic="true">
+        <p>佛陀曾說：就像所有動物的足跡，都能被容納在大象寬廣的腳印裡；</p>
+      </div>
+      <div id="art-frame">
+        <img id="art" src="images/footprints.jpg" alt="小貓站在森林裡的大足印旁。" draggable="false" fetchpriority="high">
+        <span id="art-label" hidden></span>
+      </div>
+      <div class="scripture band">
+        <div class="verse-body"><blockquote id="verse"></blockquote></div>
+        <a id="source-link" href="../#ma30">查看經典出處</a>
+      </div>
+    </div>
+  </article>
+  <button id="open-verse" class="landscape-only" type="button" aria-haspopup="dialog">展開經文</button>
+  <nav class="controls" aria-label="繪本翻頁" hidden>
+    <button id="previous" type="button" aria-label="上一頁" disabled>←<span class="portrait-label"> 上一頁</span></button>
+    <div class="position">
+      <label class="sr-only" for="page-select">選擇分鏡</label>
+      <select id="page-select"></select>
+      <span class="landscape-only contents-label" aria-hidden="true">目錄 ▾</span>
+      <span id="position-text" aria-live="polite"></span>
+    </div>
+    <button id="next" type="button" aria-label="下一頁"><span class="portrait-label">下一頁 </span>→</button>
+  </nav>
+  <div class="reading-links"><a href="../#sources">閱讀原經</a></div>
+  <p class="hint" id="hint" hidden>在畫面上左右滑動，也可以使用方向鍵翻頁。</p>
+  <noscript><p class="hint">啟用 JavaScript 即可翻頁，也可<a href="../#video">觀看原版影片</a>。</p></noscript>
+</main>
+<dialog id="verse-dialog" aria-labelledby="verse-title">
+  <div class="verse-sheet">
+    <header>
+      <h2 id="verse-title">本頁經文</h2>
+      <form method="dialog"><button type="submit" autofocus>關閉</button></form>
+    </header>
+    <div class="verse-scroll">
+      <blockquote id="dialog-verse"></blockquote>
+      <a id="dialog-source">查看經典出處</a>
+    </div>
+  </div>
+</dialog>
+</body>
+</html>
