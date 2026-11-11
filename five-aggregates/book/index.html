@@ -1,0 +1,937 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>五陰篇｜SutraZen 翻頁繪本</title>
+
+
+
+<style>:root {
+  color-scheme: dark;
+  --ink: #fffdf8;
+  --muted: #dfd6ca;
+  --accent: #f4cf94;
+  --line: #5c534a;
+  --surface: #24201c;
+  background: #151310;
+  font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; color: var(--ink); }
+[hidden] { display: none !important; }
+a { color: var(--accent); text-underline-offset: .22em; }
+button, select { font: inherit; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.top, .reader { width: min(100%, 1050px); margin: auto; }
+.top { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 48px; padding: 0 12px; font-size: .94rem; color: var(--muted); }
+.top a { display: inline-flex; align-items: center; min-height: 44px; }
+.reader { padding-inline: 10px; }
+.page { touch-action: pan-y pinch-zoom; }
+.scene { position: relative; isolation: isolate; background: #242424; border-radius: 7px; }
+#art-frame { position: relative; container-type: inline-size; }
+#art-label {
+  position: absolute;
+  top: var(--label-top);
+  left: var(--label-left);
+  transform: translate(-50%, -50%);
+  color: #16130f;
+  font-size: 8cqw;
+  font-weight: 750;
+  line-height: 1;
+  white-space: nowrap;
+}
+[data-scene="rain"], [data-scene="burden"] { --label-top: 56%; --label-left: 26%; }
+[data-scene="chase"], [data-scene="chains"] { --label-top: 25%; --label-left: 52%; }
+[data-scene="peace"] { --label-top: 49%; --label-left: 28%; }
+[data-scene="path"] { --label-top: 24%; --label-left: 56%; }
+#art-frame[data-scene="related"] #art { aspect-ratio: auto; }
+.verse-highlight { color: #ff9b9b; font-weight: 650; }
+#art { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: contain; background: #161616; border-radius: 7px 7px 0 0; }
+.band { position: relative; z-index: 1; background: rgb(30 30 30 / 84%); color: var(--ink); padding: 12px clamp(14px, 3vw, 30px); }
+.story { font-size: clamp(1.25rem, 2.5vw, 1.55rem); line-height: 1.55; text-wrap: pretty; }
+.story p { margin: 0; }
+.story p + p { margin-top: .24em; }
+.scripture { margin-top: -17px; border-top: 1px solid #ffffff40; }
+.verse-body { flex: 1; min-width: 0; }
+#verse { margin: 0; font-size: clamp(1.125rem, 2.1vw, 1.27rem); line-height: 1.7; white-space: pre-line; overflow-wrap: anywhere; }
+#source-link { display: inline-flex; align-items: center; min-height: 44px; font-size: 1rem; }
+.document-scene .scripture { margin-top: 0; }
+.controls { position: sticky; z-index: 2; bottom: 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr) minmax(0, 1fr); gap: 8px; align-items: center; margin: 0; padding: 9px 8px max(9px, env(safe-area-inset-bottom)); background: #181613; border-top: 1px solid var(--line); }
+.controls button, select { border: 1px solid var(--line); border-radius: 7px; background: var(--surface); color: var(--ink); min-height: 49px; padding: 5px; }
+.controls button { cursor: pointer; min-width: 0; font-size: 1rem; }
+.controls button:disabled { opacity: .55; cursor: default; }
+.controls #next:not(:disabled) { color: #261a10; background: var(--accent); border-color: var(--accent); }
+.position { min-width: 0; display: grid; gap: 2px; }
+.position select { width: 100%; min-width: 0; text-overflow: ellipsis; }
+#position-text { text-align: center; font-size: .87rem; color: var(--muted); }
+.reading-links { display: flex; justify-content: center; padding: 5px 12px 0; }
+.reading-links a { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding-inline: 14px; font-weight: 650; }
+.hint { color: var(--muted); text-align: center; font-size: .88rem; margin: 0; padding: 6px 10px 10px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+@media (min-width: 690px) {
+  .story { position: absolute; inset: 0 0 auto; border-radius: 7px 7px 0 0; text-align: center; }
+  .document-scene .story, .labeled-scene .story { position: relative; }
+}
+@media (max-width: 689px) {
+  .reader { padding-inline: 0; }
+  .scene, #art { border-radius: 0; }
+  .story { margin-bottom: -13px; padding-bottom: 17px; }
+  .document-scene .story { margin-bottom: 0; }
+}
+
+@media (orientation: portrait) {
+  .reader { padding-bottom: calc(7rem + env(safe-area-inset-bottom, 0px)); }
+  .controls {
+    position: fixed;
+    inset: auto 0 0;
+    width: min(100%, 1050px);
+    margin-inline: auto;
+  }
+}
+
+.text-scene .scene {
+  max-width: 48rem;
+  margin: clamp(18px, 5vh, 48px) auto 12px;
+  padding: clamp(18px, 4vw, 36px);
+  border-radius: 7px;
+}
+.text-scene #page-title {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0 0 14px;
+  overflow: visible;
+  clip-path: none;
+  white-space: normal;
+  font-size: clamp(1.2rem, 3vw, 1.55rem);
+  color: var(--accent);
+}
+.text-scene .scripture { margin: 0; padding: 0; border: 0; background: transparent; }
+
+.landscape-only { display: none; }
+
+#verse-dialog {
+  padding: 0;
+  width: min(92vw, 670px);
+  max-width: none;
+  max-height: none;
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+#verse-dialog::backdrop { background: rgb(0 0 0 / 73%); }
+.verse-sheet { display: flex; flex-direction: column; max-height: 88dvh; }
+.verse-sheet header { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 6px 14px; border-bottom: 1px solid var(--line); }
+.verse-sheet h2 { margin: 0; font-size: 1.15rem; }
+.verse-sheet button { min-height: 44px; padding-inline: 14px; color: #261a10; background: var(--accent); border: 0; border-radius: 7px; }
+.verse-scroll { overflow-y: auto; overscroll-behavior: contain; padding: 12px 16px 18px; }
+#dialog-verse { margin: 0; font-size: 1.125rem; line-height: 1.7; white-space: pre-line; }
+#dialog-source { display: inline-flex; align-items: center; min-height: 44px; }
+
+@media (orientation: landscape) {
+  .landscape-only { display: inline-flex; align-items: center; }
+  .portrait-label { display: none; }
+  body { position: relative; background: #151310; }
+  .reader {
+    --stage-width: min(100%, calc(100dvh * 16 / 9));
+    --source-gutter: max(0px, calc((100vw - 100dvh * 16 / 9) / 2));
+    --rail-offset: max(4px, calc((100% - var(--stage-width)) / 4 - 22px));
+    width: 100%;
+    height: 100dvh;
+    padding-inline: env(safe-area-inset-left) env(safe-area-inset-right);
+  }
+  .top { position: absolute; z-index: 3; inset: 5px auto auto max(5px, env(safe-area-inset-left)); width: auto; min-height: 0; padding: 0; }
+  .top > span { display: none; }
+  .top a { padding-inline: 7px; white-space: nowrap; font-weight: 650; }
+  .top a, .controls button, .position, #open-verse, .reading-links a {
+    border: 1px solid #ffffff52;
+    border-radius: 8px;
+    color: var(--ink);
+    background: rgb(30 30 30 / 90%);
+  }
+  .page { height: 100%; }
+  .scene { height: 100%; width: var(--stage-width); margin-inline: auto; border-radius: 0; background: #151310; }
+  #art-frame { height: 100%; }
+  #art { width: 100%; height: 100%; aspect-ratio: auto; object-fit: contain; border-radius: 0; }
+  .scene .story {
+    --gutter: max(0px, calc((100vw - 100dvh * 16 / 9) / 2));
+    position: absolute;
+    inset: 0 0 auto;
+    margin: 0;
+    padding: 8px max(12px, calc(85px - var(--gutter))) 8px max(12px, calc(95px - var(--gutter)));
+    font-size: clamp(1rem, 3.5dvh, 1.25rem);
+    line-height: 1.38;
+    text-align: center;
+    border-radius: 0;
+  }
+  .scene .scripture {
+    position: absolute;
+    inset: auto 0 0;
+    display: flex;
+    align-items: center;
+    min-height: calc(52px + env(safe-area-inset-bottom));
+    padding: 4px max(8px, calc(84px + env(safe-area-inset-right) - var(--source-gutter)))
+      max(4px, env(safe-area-inset-bottom)) max(8px, calc(84px + env(safe-area-inset-left) - var(--source-gutter)));
+    margin: 0;
+  }
+  #verse {
+    flex: 1;
+    min-width: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: clamp(.94rem, 3.3dvh, 1.125rem);
+    line-height: 1.4;
+  }
+  .text-scene .scene {
+    width: min(100% - 108px, 46rem);
+    height: auto;
+    max-height: calc(100dvh - 112px);
+    margin: 0 auto;
+    position: relative;
+    top: 54px;
+    padding: 12px clamp(12px, 4vw, 30px);
+    overflow-y: auto;
+    background: var(--surface);
+  }
+  .text-scene .scripture { position: static; display: block; min-height: 0; padding: 0; }
+  .text-scene #verse { display: block; overflow: visible; }
+  #open-verse {
+    position: absolute;
+    z-index: 3;
+    right: max(5px, env(safe-area-inset-right));
+    bottom: max(5px, env(safe-area-inset-bottom));
+    min-height: 44px;
+    padding-inline: 7px;
+    font-size: .88rem;
+    white-space: nowrap;
+  }
+  #source-link, .hint { display: none; }
+  .reading-links { position: absolute; z-index: 3; left: max(5px, env(safe-area-inset-left)); bottom: max(5px, env(safe-area-inset-bottom)); padding: 0; }
+  .reading-links a { padding-inline: 7px; font-size: .88rem; white-space: nowrap; }
+  .controls {
+    position: absolute;
+    inset: 0 env(safe-area-inset-right) 0 env(safe-area-inset-left);
+    display: block;
+    border: 0;
+    background: none;
+    padding: 0;
+    pointer-events: none;
+  }
+  .controls button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    min-height: 48px;
+    padding: 0;
+    pointer-events: auto;
+    font-size: 1.3rem;
+  }
+  #previous { left: var(--rail-offset); }
+  #next { right: var(--rail-offset); }
+  .controls #next:not(:disabled) { color: var(--ink); background: rgb(30 30 30 / 90%); border-color: #ffffff52; }
+  .position {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    min-width: 66px;
+    min-height: 44px;
+    padding: 3px 5px;
+    place-items: center;
+    gap: 0;
+    pointer-events: auto;
+  }
+  .position:focus-within { outline: 3px solid var(--accent); }
+  .position select { position: absolute; inset: 0; height: 100%; opacity: 0; cursor: pointer; }
+  .contents-label { font-size: .92rem; }
+  #position-text { font-size: .74rem; }
+}
+
+.text-scene .story {
+  position: static;
+  margin: 0 0 14px;
+  padding: 0;
+  background: transparent;
+  text-align: start;
+}
+
+.heart-scene { touch-action: auto; }
+.heart-scene .story { display: grid; }
+.heart-scene .story > div { grid-area: 1 / 1; }
+.heart-scene .caption-sizer { visibility: hidden; }
+.heart-scene .verse-body {
+  overflow-x: auto;
+  direction: rtl;
+  white-space: nowrap;
+}
+.heart-scene #page-title {
+  display: inline-block;
+  vertical-align: top;
+  writing-mode: vertical-rl;
+  direction: ltr;
+  margin: 0 0 0 .85em;
+  padding-block-start: .2em;
+  padding-inline-start: .15em;
+  color: #ffc36b;
+}
+.heart-scene #verse {
+  display: inline-block;
+  vertical-align: top;
+  writing-mode: vertical-rl;
+  direction: ltr;
+  inline-size: clamp(17rem, 42vh, 24rem);
+  block-size: max-content;
+  padding: .15em .25em;
+  line-height: 1.85;
+  color: #ffc36b;
+}
+#art { aspect-ratio: 3 / 2; }
+.story p, #art-summary p { white-space: pre-line; }
+#art-summary {
+  color: #fffdf8;
+  padding: 1rem;
+  background: #24201c;
+  line-height: 1.55;
+  font-size: clamp(1rem, 2.25vw, 1.25rem);
+}
+#art-summary p { margin: 0; }
+#art-summary p + p { margin-top: .8em; }
+.heart-scene .scene { background: #090807; }
+
+@media (orientation: portrait) and (min-width: 680px) {
+  .summary-scene #art-summary {
+    position: absolute;
+    inset: 0;
+    padding: 5.5% 4% 4%;
+    overflow: auto;
+    background: rgb(20 16 10 / 70%);
+  }
+  .summary-scene #art-summary p + p { margin-top: 3%; }
+}
+
+@media (orientation: landscape) {
+  .reader {
+    --stage-width: min(calc(100% - 100px), calc(100dvh * 3 / 2));
+    --source-gutter: max(0px, calc((100vw - var(--stage-width)) / 2));
+  }
+  #art { aspect-ratio: auto; }
+  .scene .story { --gutter: var(--source-gutter); }
+  .text-scene .scene .story { position: static; padding: 0; text-align: start; }
+  .summary-scene #art-summary {
+    position: absolute;
+    inset: 0;
+    padding: 4dvh 4%;
+    overflow: auto;
+    overscroll-behavior: contain;
+    background: rgb(20 16 10 / 72%);
+    font-size: clamp(1rem, 3.8dvh, 1.25rem);
+  }
+  .heart-scene #verse { inline-size: clamp(10rem, calc(100dvh - 185px), 22rem); }
+}
+</style></head>
+<body>
+<header class="top">
+  <a href="../"><span class="portrait-label">‹ 五陰篇導讀</span><span class="landscape-only">‹ 回簡介</span></a>
+  <span>SutraZen · 佛法繪本</span>
+</header>
+<main class="reader">
+  <h1 class="sr-only">五陰篇翻頁繪本</h1>
+  <article class="page" aria-labelledby="page-title">
+    <div class="scene">
+      <h2 id="page-title" class="sr-only">片頭・我是誰？</h2>
+      <div class="story band" id="caption" aria-live="polite" aria-atomic="true">
+        
+      </div>
+      <div id="art-frame">
+        <img id="art" alt="" width="1536" height="1024" draggable="false">
+        <div id="art-summary" tabindex="0" role="region" aria-label="星空總結" hidden></div>
+      </div>
+      <div class="scripture band">
+        <div class="verse-body"><blockquote id="verse"></blockquote></div>
+        <a id="source-link" href="../#sa46">查看經典出處</a>
+      </div>
+    </div>
+  </article>
+  <button id="open-verse" class="landscape-only" type="button" aria-haspopup="dialog">展開經文</button>
+  <nav class="controls" aria-label="繪本翻頁" hidden>
+    <button id="previous" type="button" aria-label="上一頁" disabled>←<span class="portrait-label"> 上一頁</span></button>
+    <div class="position">
+      <label class="sr-only" for="page-select">選擇分鏡</label>
+      <select id="page-select"></select>
+      <span class="landscape-only contents-label" aria-hidden="true">目錄 ▾</span>
+      <span id="position-text" aria-live="polite"></span>
+    </div>
+    <button id="next" type="button" aria-label="下一頁"><span class="portrait-label">下一頁 </span>→</button>
+  </nav>
+  <div class="reading-links"><a href="../#sources">閱讀原經</a></div>
+  <p class="hint" id="hint" hidden>在畫面上左右滑動，也可以使用方向鍵翻頁。</p>
+  <noscript><p class="hint">啟用 JavaScript 即可翻頁，也可<a href="../#video">觀看原版影片</a>。</p></noscript>
+</main>
+<dialog id="verse-dialog" aria-labelledby="verse-title">
+  <div class="verse-sheet">
+    <header>
+      <h2 id="verse-title">本頁經文</h2>
+      <form method="dialog"><button type="submit" autofocus>關閉</button></form>
+    </header>
+    <div class="verse-scroll">
+      <blockquote id="dialog-verse"></blockquote>
+      <a id="dialog-source">查看經典出處</a>
+    </div>
+  </div>
+</dialog>
+<script>const previewImages={"a04.webp":"images/a04.webp","a09.webp":"images/a09.webp","a10.webp":"images/a10.webp","a02.webp":"images/a02.webp","a03.webp":"images/a03.webp","a01.webp":"images/a01.webp","a06.webp":"images/a06.webp","a08.webp":"images/a08.webp","a13.webp":"images/a13.webp","a12.webp":"images/a12.webp","a11.webp":"images/a11.webp","a07.webp":"images/a07.webp","a05.webp":"images/a05.webp"};
+const scenes = [
+  {
+    "title": "片頭・我是誰？",
+    "pages": [
+      {
+        "caption": "你是否也曾問過自己：\n「我是誰？」\n「為什麼有時快樂、有時痛苦？」\n「為什麼我的心總是那麼複雜、難以掌握？」\n在這個世界上，我們經歷無數情緒、變化與煩惱。\n憂傷、焦慮、失望等情緒，讓我們想逃離。\n佛陀早就看見這一切，\n他教導我們，痛苦其實來自於對「我」的誤解。\n這本小小的繪本，\n將用日常生活的故事、佛陀的經文，\n帶你慢慢看清，\n這個「我」，是怎麼組成的；\n又該如何放下，走向真正的自由。",
+        "verse": "",
+        "source": ""
+      }
+    ]
+  },
+  {
+    "title": "樹下說法・五受陰",
+    "pages": [
+      {
+        "caption": "佛陀對比丘們說：「有五種受陰，哪五種呢？",
+        "verse": "爾時，世尊告諸比丘：有五受陰。云何為五？",
+        "source": "../#sa46"
+      },
+      {
+        "caption": "色受陰、受受陰、想受陰、行受陰和識受陰。",
+        "verse": "色受陰，受、想、行、識受陰。",
+        "source": "../#sa46"
+      }
+    ],
+    "image": "a10.webp",
+    "alt": "穿袈裟的小貓在月夜樹下說法"
+  },
+  {
+    "title": "宿命神通・三格小貓",
+    "pages": [
+      {
+        "caption": "如果擁有宿命神通的修行人，了解自己過去的種種生命，",
+        "verse": "若沙門、婆羅門以宿命智自識種種宿命，",
+        "source": "../#sa46"
+      },
+      {
+        "caption": "那麼他們所知道的過去、現在和未來的生命經歷，\n都是在這五受陰中經歷的。",
+        "verse": "已識、當識、今識，皆於此五受陰已識、當識、今識。",
+        "source": "../#sa46"
+      },
+      {
+        "caption": "過去的色、受、想、行、識、就是這樣的。",
+        "verse": "我過去所經如是色、如是受、如是想、如是行、如是識。",
+        "source": "../#sa46"
+      }
+    ],
+    "image": "a07.webp",
+    "alt": "三格小貓分別合掌、穿日常衣服和太空裝"
+  },
+  {
+    "title": "色・小貓與四大",
+    "pages": [
+      {
+        "caption": "什麼是「色」？",
+        "verse": "云何色如實知？",
+        "source": "../#sa46"
+      },
+      {
+        "caption": "就是由地、水、火、風，四大與四大所組成的，",
+        "verse": "諸所有色，一切四大及四大造色，是名色，如是色如實知。",
+        "source": "../#sa46"
+      },
+      {
+        "caption": "可看到，可聽到，可聞到，可嚐到，可觸到的一切。",
+        "verse": "諸所有色，一切四大及四大造色，是名色，如是色如實知。",
+        "source": "../#sa46"
+      }
+    ],
+    "image": "a11.webp",
+    "alt": "小貓坐在地球上，周圍有石頭、水波、火焰與風雲"
+  },
+  {
+    "title": "色受陰・雨中撐傘",
+    "pages": [
+      {
+        "caption": "凡是能被阻礙、能被分割的，稱為「色受陰」。",
+        "verse": "若可閡、可分，是名色受陰。",
+        "source": "../#sa46"
+      },
+      {
+        "caption": "例如被手、石頭、棍棒、刀子、冷熱、飢渴、\n蚊蟲叮咬、風雨等所觸，這些都是色受陰的特性。",
+        "verse": "指所閡，若手、若石、若杖、若刀、若冷、若暖、若渴、若飢、\n若蚊虻諸毒蟲、風雨觸，是名觸閡，是故，閡是色受陰；",
+        "source": "../#sa46"
+      },
+      {
+        "caption": "因此，「色受陰」是無常、痛苦、會變化的。",
+        "verse": "復以此色受陰是無常、苦、變易法。",
+        "source": "../#sa46"
+      }
+    ],
+    "image": "a05.webp",
+    "alt": "小貓撐傘走過暴雨"
+  },
+  {
+    "title": "色受陰・冰淇淋掉落",
+    "pages": [
+      {
+        "caption": "我們的身體，會被蚊子咬、被雨淋濕，會冷、會熱，也會生病。",
+        "verse": "",
+        "source": ""
+      },
+      {
+        "caption": "甚至連你喜歡的東西，也會被風吹走、摔壞、融化...",
+        "verse": "",
+        "source": ""
+      },
+      {
+        "caption": "佛陀說：這些會改變、會壞掉的東西，就叫做「色受陰」。",
+        "verse": "",
+        "source": ""
+      },
+      {
+        "caption": "這些東西從來不穩固，無常，也常常帶來苦。",
+        "verse": "",
+        "source": ""
+      }
+    ],
+    "image": "a02.webp",
+    "alt": "小貓的冰淇淋掉在地上"
+  },
+  {
+    "title": "受受陰・草地上的貓群",
+    "pages": [
+      {
+        "caption": "各種感覺是「受受陰」，感覺痛苦、快樂、\n既不苦也不樂，這些都是「受受陰」的表現。",
+        "verse": "諸覺相是受受陰，何所覺？覺苦、覺樂、覺不苦不樂，是故，名覺相是受受陰；",
+        "source": "../#sa46"
+      },
+      {
+        "caption": "痛苦和快樂的感受都不會永久不變，\n因此，「受受陰」也是無常、痛苦、會變化的。",
+        "verse": "復以此受受陰是無常、苦、變易法。",
+        "source": "../#sa46"
+      }
+    ],
+    "image": "a01.webp",
+    "alt": "草地上的五隻貓"
+  },
+  {
+    "title": "想受陰・同一片雲的兩種看法",
+    "pages": [
+      {
+        "caption": "各種想法是「想受陰」，無論是少量、多量、無量的想法，\n或是認為一切皆無，這些都是「想受陰」的表現。",
+        "verse": "諸想是想受陰，何所想？少想、多想、無量想，都無所有，作無所有想，是故，名想受陰；",
+        "source": "../#sa46"
+      },
+      {
+        "caption": "因此，「想受陰」也是無常、痛苦、會變化的。",
+        "verse": "復以此想受陰是無常、苦、變易法。",
+        "source": "../#sa46"
+      },
+      {
+        "caption": "「想」就是取相。像是心裡在幫我們貼標籤。",
+        "verse": "阿毘達磨俱舍論卷第四：想謂於境取差別相。\n阿毘達磨品類足論卷第一：想云何？謂取像性。此有三種，謂小想、大想、無量想。",
+        "source": "../#treatises"
+      },
+      {
+        "caption": "我們依照過去的經驗、記憶，把東西分類，就是取相。\n這是樹，那朵花是紅色的，聽到的聲音是媽媽在叫我。",
+        "verse": "",
+        "source": ""
+      },
+      {
+        "caption": "小貓咪看到天空飄來一片雲。她說：「這像棉花糖！」\n但朋友說：「才不是，那是暴風雨要來了！」",
+        "verse": "",
+        "source": ""
+      },
+      {
+        "caption": "原來，我們的心習慣給東西貼標籤，就是「想受陰」。\n感受到，就說「這是什麼」、「那是好」、「那是壞」。",
+        "verse": "",
+        "source": ""
+      },
+      {
+        "caption": "想受陰是無常，想法會變，今天喜歡的，明天可能不喜歡。\n想受陰是苦，想太多會煩惱，想錯了會後悔。",
+        "verse": "",
+        "source": ""
+      },
+      {
+        "caption": "「想受陰」會變異，想法常常不由自主。會被外界影響。\n例如雲不斷改變形狀，我們也會被其他人的想法影響。",
+        "verse": "",
+        "source": ""
+      }
+    ],
+    "image": "a12.webp",
+    "alt": "樹下兩隻小貓看見白雲與烏雲"
+  },
+  {
+    "title": "行受陰・控制台",
+    "pages": [
+      {
+        "caption": "各種造作是「行受陰」，對色、受、想、行、識的造作，\n都是「行受陰」的表現。",
+        "verse": "為作相是行受陰，何所為作？於色為作；於受、想、行、識為作，是故，為作相是行受陰；",
+        "source": "../#sa46"
+      },
+      {
+        "caption": "因此，「行受陰」也是無常、痛苦、會變化的。",
+        "verse": "復以此行受陰是無常、苦、變易法。",
+        "source": "../#sa46"
+      },
+      {
+        "caption": "我們的內心就像是一個控制台，生氣時按下「吵架」的按鈕。\n想逃避按下「躲起來」的開關、想掌控就轉動「計劃」的旋鈕。",
+        "verse": "",
+        "source": ""
+      },
+      {
+        "caption": "行受陰，是心的造作，推動著我們去做、去說、去煩惱。",
+        "verse": "",
+        "source": ""
+      },
+      {
+        "caption": "但原本勇敢的心，突然退縮；或堅定的決定，忽然動搖。\n所以「行受陰」，也是無常，痛苦，會變易的。",
+        "verse": "",
+        "source": ""
+      }
+    ],
+    "image": "a04.webp",
+    "alt": "小貓坐在有四面螢幕的控制台前"
+  },
+  {
+    "title": "識受陰・廚房做蛋糕",
+    "pages": [
+      {
+        "caption": "各種識別是「識受陰」，識別色、聲、香、味、觸、法，\n這些都是「識受陰」的表現。",
+        "verse": "別知相是識受陰，何所識？識色，識聲、香、味、觸、法，是故，名識受陰；",
+        "source": "../#sa46"
+      },
+      {
+        "caption": "因此，「識受陰」也是無常、痛苦、會變化的。",
+        "verse": "復以此識受陰，是無常、苦、變易法。",
+        "source": "../#sa46"
+      },
+      {
+        "caption": "小貓問：「我怎麼知道那是蛋糕？」\n媽媽說：「你眼睛看見，鼻子聞到，心就說：我知道！」",
+        "verse": "",
+        "source": ""
+      },
+      {
+        "caption": "小貓問：「那我怎麼知道什麼是好？什麼是壞？」\n媽媽說：「那是你的『識』在判斷。」",
+        "verse": "",
+        "source": ""
+      },
+      {
+        "caption": "有了「識受陰」在識別，「想受陰」才能取相貼標籤。\n我們根據這些感官資訊下判斷，再延伸出喜歡或討厭。",
+        "verse": "",
+        "source": ""
+      },
+      {
+        "caption": "但我們對看到的色，聽到的聲，聞到的香，嚐到的味，摸到的觸，\n意識到的法，所知道的不一定準確，也可能一直在改變。",
+        "verse": "",
+        "source": ""
+      },
+      {
+        "caption": "什麼都不懂的孩子轉變為知道很多的成人，\n有時帶來的是煩惱。",
+        "verse": "",
+        "source": ""
+      }
+    ],
+    "image": "a13.webp",
+    "alt": "小貓和媽媽在廚房做蛋糕"
+  },
+  {
+    "title": "觀五受陰・拉紙箱",
+    "pages": [
+      {
+        "caption": "我們對色受陰這樣學習：「我現在被色所束縛，\n過去也曾被色所束縛，就像現在一樣。」",
+        "verse": "諸比丘！彼多聞聖弟子於此色受陰作如是學：『我今為現在彼色所食，\n過去世已曾為色所食，如今現在。』",
+        "source": "../#sa46"
+      },
+      {
+        "caption": "進一步思考：「如果我繼續貪愛未來的色，\n將來也會被色所束縛，就像現在一樣。」",
+        "verse": "復作是念：「我今為現在色所食，我若復樂著未來色者，當復為彼色所食，如今現在。」",
+        "source": "../#sa46"
+      },
+      {
+        "caption": "了解這些後，不再執著過去的色，不再貪愛未來的色，\n對現在的色生起厭離、捨離欲望、滅除煩惱，走向解脫。",
+        "verse": "作如是知已，不願過去色，不樂著未來色，於現在色生厭、離欲、滅患，向滅。",
+        "source": "../#sa46"
+      },
+      {
+        "caption": "對受、想、行、識受陰也這樣學習：我現在被識所束縛，\n過去也曾被識所束縛，就像現在一樣；",
+        "verse": "多聞聖弟子於此受……想……行……識受陰作如是學：\n我今現在為現在識所食，於過去世已曾為識所食，如今現在；",
+        "source": "../#sa46"
+      },
+      {
+        "caption": "我現在被識所束縛，如果我繼續貪愛未來的識，\n將來也會被識所束縛，就像現在一樣。",
+        "verse": "多聞聖弟子於此受……想……行……識受陰作如是學：『我今現在為現在識所食，\n於過去世已曾為識所食，如今現在；",
+        "source": "../#sa46"
+      }
+    ],
+    "image": "a09.webp",
+    "alt": "小貓拉著三個紙箱"
+  },
+  {
+    "title": "放下束縛・晴天散步",
+    "pages": [
+      {
+        "caption": "了解這些後，不再執著過去的識，不再貪愛未來的識，\n對現在的識生起厭離、捨離欲望、滅除煩惱，走向解脫，\n使其滅而不增，退而不進，滅而不起，捨而不取。",
+        "verse": "如是知已，不願過去識，不樂未來識，於現在識生厭、離欲、滅患，向滅，\n滅而不增，退而不進，滅而不起，捨而不取。",
+        "source": "../#sa46"
+      },
+      {
+        "caption": "什麼是滅而不增？色的滅而不增；受、想、行、識的滅而不增。\n什麼是退而不進？色的退而不進；受、想、行、識的退而不進。",
+        "verse": "於何滅而不增？色滅而不增；受、想、行、識滅而不增。\n於何退而不進？色退而不進；受、想、行、識退而不進。",
+        "source": "../#sa46"
+      },
+      {
+        "caption": "什麼是滅而不起？色的滅而不起；受、想、行、識的滅而不起。\n什麼是捨而不取？色的捨而不取；受、想、行、識的捨而不取。",
+        "verse": "於何滅而不起？色滅而不起；受、想、行、識滅而不起。\n於何捨而不取？色捨而不取；受、想、行、識捨而不取。",
+        "source": "../#sa46"
+      }
+    ],
+    "image": "a06.webp",
+    "alt": "小貓在陽光下散步"
+  },
+  {
+    "title": "證得涅槃・日照下盤坐",
+    "pages": [
+      {
+        "caption": "滅而不再增長，安住在寂靜的解脫中；\n退去不再前進，安住在止息之中；",
+        "verse": "滅而不增，寂滅而住；退而不進，寂退而住；",
+        "source": "../#sa46"
+      },
+      {
+        "caption": "滅盡不再生起，安住於究竟的滅盡中；\n捨棄不再執取，不再產生任何執著；",
+        "verse": "滅而不起，寂滅而住；捨而不取，不生繫著；",
+        "source": "../#sa46"
+      },
+      {
+        "caption": "沒有任何執著時，便親身體證涅槃，內心明白：",
+        "verse": "不繫著已，自覺涅槃：",
+        "source": "../#sa46"
+      },
+      {
+        "caption": "我的生死輪迴已經結束，清淨的修行已圓滿，\n該做的都已完成，我已經確知：不會再有來生了。",
+        "verse": "我生已盡，梵行已立，所作已作，自知不受後有。",
+        "source": "../#sa46"
+      }
+    ],
+    "image": "a08.webp",
+    "alt": "小貓在陽光下閉眼盤坐"
+  },
+  {
+    "title": "星空總結・五受陰與放下",
+    "pages": [
+      {
+        "caption": "",
+        "verse": "",
+        "source": ""
+      }
+    ],
+    "image": "a03.webp",
+    "alt": "有星星、月亮和行星的夜空",
+    "summary": [
+      "色受陰：是我們的身體，以及與我們互動的物質世界。\n受受陰：是我們對外在世界產生的感受。\n想受陰：是取相，類似我們給事物貼上標籤。\n行受陰：是推動我們說話、行動與情緒反應的內在動力。\n識受陰：是我們對世界的認知與判斷。",
+      "佛陀不是要我們逃避五陰，\n而是帶我們看清楚，\n苦，不是因為世界不好，\n而是我們緊緊抓住那些本來就會變的東西。\n當我們學會放下，\n就會發現，真正的自由與安穩。"
+    ]
+  },
+  {
+    "title": "般若波羅蜜多心經",
+    "pages": [
+      {
+        "caption": "《心經》裡所說的「五蘊」，就是本經提到的「五陰」。",
+        "verse": "",
+        "source": ""
+      },
+      {
+        "caption": "如今讀完這部經文，再回頭讀《心經》，是否感受又多了一些呢？",
+        "verse": "",
+        "source": ""
+      }
+    ],
+    "heart": "觀自在菩薩。行深般若波羅蜜多時。\n照見五蘊皆空。度一切苦厄。\n舍利子。色不異空。空不異色。色即是空。空即是色。受想行識。亦復如是。\n舍利子。是諸法空相。不生不滅。不垢不淨。不增不減。\n是故空中無色。無受想行識。無眼耳鼻舌身意。無色聲香味觸法。無眼界。乃至無意識界。無無明。亦無無明盡。乃至無老死。亦無老死盡。無苦集滅道。無智亦無得。以無所得故。\n菩提薩埵。依般若波羅蜜多故。心無罣礙。無罣礙故。無有恐怖。遠離顛倒夢想。究竟涅槃。\n三世諸佛。依般若波羅蜜多故。得阿耨多羅三藐三菩提。\n故知般若波羅蜜多。是大神咒。是大明咒。是無上咒。是無等等咒。能除一切苦。真實不虛。\n故說般若波羅蜜多咒。即說咒曰。揭諦揭諦。波羅揭諦。波羅僧揭諦。菩提薩婆訶。",
+    "highlight": "照見五蘊皆空。度一切苦厄。\n舍利子。色不異空。空不異色。色即是空。空即是色。受想行識。亦復如是。"
+  },
+  {
+    "title": "片尾・製作說明",
+    "pages": [
+      {
+        "caption": "本繪本所呈現的內容，係根據《雜阿含經》第46經所製作。\n\n為了讓讀者更親近佛法，我們以圖文並茂的方式，用白話語言說明經意。\n\n然而，繪本的詮釋難免簡略，無法完全涵蓋原經的深義。\n\n我們誠摯地鼓勵讀者參閱原經文，細細品味佛陀的智慧與慈悲，\n\n也希望這本繪本能成為您走入經藏的溫柔起點。",
+        "verse": "",
+        "source": "../#sa46"
+      }
+    ]
+  }
+];
+const pages = [];
+const sceneStarts = scenes.map((scene, sceneIndex) => {
+  const start = pages.length;
+  scene.pages.forEach(({caption, verse, source}) => {
+    pages.push({sceneIndex, lines: caption ? caption.split(/\n{2,}/) : [], verse, source});
+  });
+  return start;
+});
+
+const page = document.querySelector('.page');
+const title = document.getElementById('page-title');
+const scenePanel = title.parentElement;
+const caption = document.getElementById('caption');
+const art = document.getElementById('art');
+const artFrame = document.getElementById('art-frame');
+const artSummary = document.getElementById('art-summary');
+const scripture = document.querySelector('.scripture');
+const sourceLink = document.getElementById('source-link');
+const verse = document.getElementById('verse');
+const verseBody = verse.parentElement;
+const previous = document.getElementById('previous');
+const next = document.getElementById('next');
+const select = document.getElementById('page-select');
+const positionText = document.getElementById('position-text');
+const openVerse = document.getElementById('open-verse');
+const verseDialog = document.getElementById('verse-dialog');
+const dialogVerse = document.getElementById('dialog-verse');
+const dialogSource = document.getElementById('dialog-source');
+const landscape = matchMedia('(orientation: landscape)');
+
+const warmed = new Set();
+let current = 0;
+
+function makeCaptionLine(line) {
+  const paragraph = document.createElement('p');
+  paragraph.textContent = line;
+  return paragraph;
+}
+
+function showPage(index) {
+  const entry = pages[index];
+  if (!entry) return;
+  const scene = scenes[entry.sceneIndex];
+  current = index;
+  if (history.state?.bookPage !== index) {
+    try { history.replaceState({ ...history.state, bookPage: index }, ''); } catch {}
+  }
+  title.textContent = scene.title;
+  caption.hidden = entry.lines.length === 0;
+  const isHeart = Boolean(scene.highlight);
+  if (isHeart) {
+    const variants = pages.filter(candidate => candidate.sceneIndex === entry.sceneIndex);
+    caption.replaceChildren(...variants.map(variant => {
+      const copy = document.createElement('div');
+      copy.append(...variant.lines.map(makeCaptionLine));
+      if (variant !== entry) {
+        copy.className = 'caption-sizer';
+        copy.setAttribute('aria-hidden', 'true');
+      }
+      return copy;
+    }));
+  } else {
+    caption.replaceChildren(...entry.lines.map(makeCaptionLine));
+  }
+  artFrame.hidden = !scene.image;
+  artFrame.dataset.scene = scene.image?.split('.')[0] ?? '';
+  artSummary.hidden = !scene.summary;
+  artSummary.replaceChildren(...(scene.summary ?? []).map(makeCaptionLine));
+  artSummary.scrollTop = 0;
+  if (scene.image) {
+    const image = previewImages[scene.image];
+    art.alt = scene.alt;
+    if (art.getAttribute('src') !== image) art.src = image;
+  }
+  page.classList.toggle('text-scene', !scene.image);
+  page.classList.toggle('heart-scene', isHeart);
+  if (isHeart) {
+    if (title.parentElement !== verseBody) verseBody.prepend(title);
+    verseBody.setAttribute('tabindex', '0');
+    verseBody.setAttribute('role', 'region');
+    verseBody.setAttribute('aria-label', '心經直書，從右往左讀，可橫向捲動');
+  } else {
+    if (title.parentElement !== scenePanel) scenePanel.prepend(title);
+    verseBody.removeAttribute('tabindex');
+    verseBody.removeAttribute('role');
+    verseBody.removeAttribute('aria-label');
+  }
+  page.classList.toggle('summary-scene', Boolean(scene.summary));
+  page.classList.toggle('document-scene', Boolean(scene.summary));
+  const verseText = scene.heart ?? entry.verse;
+  if (verse.textContent !== verseText) {
+    verse.textContent = verseText;
+    if (scene.highlight) {
+      const offset = verseText.indexOf(scene.highlight);
+      const emphasis = document.createElement('strong');
+      emphasis.className = 'verse-highlight';
+      emphasis.textContent = scene.highlight;
+      verse.replaceChildren(verseText.slice(0, offset), emphasis, verseText.slice(offset + scene.highlight.length));
+    }
+  }
+  sourceLink.hidden = !entry.source || !entry.verse;
+  if (entry.source) sourceLink.href = entry.source;
+  scripture.hidden = !verseText;
+  openVerse.hidden = !scene.image || !entry.verse;
+  previous.disabled = index === 0;
+  next.disabled = index === pages.length - 1;
+  select.value = String(entry.sceneIndex);
+  positionText.textContent = (index + 1) + ' / ' + pages.length + ' 頁';
+  if (window.scrollY) window.scrollTo(0, 0);
+
+  const upcoming = scenes[entry.sceneIndex + 1]?.image;
+  if (upcoming && !warmed.has(upcoming)) {
+    warmed.add(upcoming);
+    new Image().src = previewImages[upcoming];
+  }
+}
+
+scenes.forEach((scene, index) => {
+  select.add(new Option((index + 1) + ' 幕 · ' + scene.title, index));
+});
+document.querySelector('.controls').hidden = false;
+document.getElementById('hint').hidden = false;
+showPage(pages[history.state?.bookPage] ? history.state.bookPage : 0);
+
+previous.addEventListener('click', () => showPage(current - 1));
+next.addEventListener('click', () => showPage(current + 1));
+select.addEventListener('change', () => showPage(sceneStarts[Number(select.value)]));
+openVerse.addEventListener('click', () => {
+  dialogVerse.textContent = verse.textContent;
+  dialogSource.hidden = sourceLink.hidden;
+  if (!sourceLink.hidden) dialogSource.href = sourceLink.href;
+  verseDialog.showModal();
+  verseDialog.querySelector('.verse-scroll').scrollTop = 0;
+});
+landscape.addEventListener('change', event => {
+  if (!event.matches && verseDialog.open) verseDialog.close();
+});
+
+document.addEventListener('keydown', event => {
+  if (verseDialog.open || verseBody.contains(event.target) || artSummary.contains(event.target) || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey || event.target === select) return;
+  if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') return;
+  event.preventDefault();
+  showPage(current + (event.key === 'ArrowRight' ? 1 : -1));
+});
+
+let touchStart;
+page.addEventListener('touchstart', event => {
+  if (event.touches.length !== 1 || event.target.closest('a, summary, #art-summary, .heart-scene .verse-body')) {
+    touchStart = undefined;
+    return;
+  }
+  const { clientX, clientY } = event.touches[0];
+  touchStart = { x: clientX, y: clientY };
+}, { passive: true });
+page.addEventListener('touchcancel', () => { touchStart = undefined; });
+page.addEventListener('touchend', event => {
+  if (!touchStart) return;
+  const { clientX, clientY } = event.changedTouches[0];
+  const dx = clientX - touchStart.x;
+  const dy = clientY - touchStart.y;
+  touchStart = undefined;
+  if (Math.abs(dx) > 55 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+    showPage(current + (dx < 0 ? 1 : -1));
+  }
+}, { passive: true });
+</script></body>
+</html>
