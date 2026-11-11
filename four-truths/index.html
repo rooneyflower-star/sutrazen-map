@@ -49,6 +49,15 @@ section{margin-top:40px;scroll-margin-top:20px}.truths{display:grid;grid-templat
   font-weight: 700;
 }
 .book-cover:hover .book-cover-action > span { background: #142c22; }
+
+/* First sermon: Dharma wheel illustration; responsive on small screens. */
+.sermon-with-wheel { display: grid; grid-template-columns: minmax(0,1fr) 185px; gap: clamp(16px,3vw,30px); align-items: center; }
+.sermon-with-wheel .example { max-width: none; }
+.dharma-wheel-figure { margin: 0; text-align: center; }
+.dharma-wheel-figure img { display: block; width: 100%; max-width: 185px; height: auto; margin-inline: auto; }
+.dharma-wheel-figure figcaption { color: var(--muted); font-size: .86rem; line-height: 1.55; margin-top: 6px; }
+@media (max-width: 640px) { .sermon-with-wheel { grid-template-columns: minmax(0,1fr); } .dharma-wheel-figure { width: min(190px,100%); margin-inline: auto; } }
+
 </style>
 </head>
 <body>
@@ -67,9 +76,15 @@ section{margin-top:40px;scroll-margin-top:20px}.truths{display:grid;grid-templat
 </section>
 <section aria-labelledby="first-sermon">
 <h2 id="first-sermon">鹿野苑的故事｜佛陀初轉法輪</h2>
+<div class="sermon-with-wheel">
 <div class="example">
 <p>成道後，佛陀走到波羅奈的鹿野苑，去見五位曾和他一起修行的比丘。五人遠遠看見他，原本說好不去迎接。等佛陀走近，有人上前接過衣缽，有人為他備座，也有人端來洗腳的水。</p>
 <p>佛陀告訴他們，沉溺享樂與自我折磨的苦行，是修行中要避開的兩個極端。他所體悟的中道，就是八正道。接著，他說明苦、集、滅、道，以及如何實踐四聖諦。說法時，憍陳如生起法眼，明白凡是因緣生起的，都會止息。這場說法，後來稱為「初轉法輪」。</p>
+</div>
+<figure class="dharma-wheel-figure">
+  <img src="assets/dharma-wheel.svg" width="320" height="320" loading="lazy" decoding="async" alt="八輻法輪，象徵佛陀教導的八正道">
+  <figcaption>八輻法輪 · 象徵八正道</figcaption>
+</figure>
 </div>
 <p class="after">經典對讀 · <a href="#sa379">《雜阿含經》第 379 經</a> · <a href="#sn56-11">《相應部》〈轉法輪經〉</a> · <a href="https://suttacentral.net/mn26/en/sujato#26.1">《中部》第 26 經（重逢經過）</a></p>
 </section>
