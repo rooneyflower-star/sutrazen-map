@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" role="img" aria-labelledby="wheelTitle wheelDesc">
+  <title id="wheelTitle">八輻法輪</title>
+  <desc id="wheelDesc">以八根輻條象徵八正道的法輪，使用古銅金、木棕與米白色。</desc>
+  <defs>
+    <linearGradient id="bronze" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#dcb982"/>
+      <stop offset="55%" stop-color="#b58a52"/>
+      <stop offset="100%" stop-color="#87633d"/>
+    </linearGradient>
+    <radialGradient id="ground"><stop offset="0%" stop-color="#fdf9f0"/><stop offset="100%" stop-color="#f3ead9"/></radialGradient>
+  </defs>
+  <circle cx="160" cy="160" r="148" fill="url(#ground)"/>
+  <!-- outer wheel rim -->
+  <circle cx="160" cy="160" r="123" fill="none" stroke="#80633d" stroke-width="4"/>
+  <circle cx="160" cy="160" r="111" fill="none" stroke="url(#bronze)" stroke-width="22"/>
+  <circle cx="160" cy="160" r="99" fill="none" stroke="#e7ce9e" stroke-width="2.5"/>
+  <!-- exactly eight spokes -->
+  <g stroke="#8d6b43" stroke-width="16" stroke-linecap="round">
+    <line x1="160" y1="136" x2="160" y2="59"/>
+    <line x1="160" y1="136" x2="160" y2="59" transform="rotate(45 160 160)"/>
+    <line x1="160" y1="136" x2="160" y2="59" transform="rotate(90 160 160)"/>
+    <line x1="160" y1="136" x2="160" y2="59" transform="rotate(135 160 160)"/>
+    <line x1="160" y1="136" x2="160" y2="59" transform="rotate(180 160 160)"/>
+    <line x1="160" y1="136" x2="160" y2="59" transform="rotate(225 160 160)"/>
+    <line x1="160" y1="136" x2="160" y2="59" transform="rotate(270 160 160)"/>
+    <line x1="160" y1="136" x2="160" y2="59" transform="rotate(315 160 160)"/>
+  </g>
+  <g fill="#e7c995">
+    <circle cx="160" cy="160" r="31" stroke="#80613a" stroke-width="7"/>
+    <circle cx="160" cy="160" r="11" fill="#80613a"/>
+    <circle cx="160" cy="160" r="4" fill="#f9eed6"/>
+  </g>
+</svg>
