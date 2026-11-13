@@ -1,0 +1,13 @@
+﻿scene,title,render_mode,production_path,width,height,sha256,overlay_text,overlay_position,source_note
+1,森林與象足印,image+html_text,four-truths/book/images/footprints.jpg,2752,1536,b78ad61297fc303abbd2f81f9ed14ae112d85b66339f26957a8bdf19fd9452af,,,已核定正式圖片；缺少原檔來源時回看 Notion／使用者附件，勿改用影片截圖
+2,苦諦 · 雨中背石,image+html_text,four-truths/book/images/rain.jpg,1536,857,b55502db127616000937739feffb9966691997acaef753efeeb7440eda787bfe,苦諦,left 26%; top 56%,已核定正式圖片；缺少原檔來源時回看 Notion／使用者附件，勿改用影片截圖
+3,苦諦 · 五條鎖鏈,image+html_text,four-truths/book/images/burden.jpg,1376,768,0dcac282af5e2929569152d6a7c83b3184429d25199cb06fdb5ed53bf2345f79,苦諦,left 26%; top 56%,已核定正式圖片；缺少原檔來源時回看 Notion／使用者附件，勿改用影片截圖
+4,集諦 · 滾輪與蝴蝶,image+html_text,four-truths/book/images/chase.jpg,2752,1536,2d949a68ef16371c8b4a65d14e3b6aadb89f7066f6aedd1fba32b5d8868267ce,集諦,left 52%; top 25%,已核定正式圖片；缺少原檔來源時回看 Notion／使用者附件，勿改用影片截圖
+5,集諦 · 鎖鏈與彩色光帶,image+html_text,four-truths/book/images/chains.jpg,1376,768,e75c976a022d34a8c1373c66fdb5bfad5695990b099092408a70ecf52348db91,集諦,left 52%; top 25%,已核定正式圖片；缺少原檔來源時回看 Notion／使用者附件，勿改用影片截圖
+6,滾輪中亮起燈泡,image+html_text,four-truths/book/images/insight.jpg,1376,768,ba3a8a866d6f6e591373c41c27c8f5f83f494c9fee49bab79c42b3d63e8497b1,,,已核定正式圖片；缺少原檔來源時回看 Notion／使用者附件，勿改用影片截圖
+7,滅諦 · 草地與彩虹,image+html_text,four-truths/book/images/peace.jpg,1536,857,1878a42ff570020559db291168ae845d11c3de851a2b4b700740389f189c4589,滅諦,left 28%; top 49%,已核定正式圖片；缺少原檔來源時回看 Notion／使用者附件，勿改用影片截圖
+8,道諦 · 大象醫生與八個階梯,image+html_text,four-truths/book/images/path.jpg,2752,1536,196a274fa41814df190d0591f3b5edaf57d53386fbcea0e52532deccf348c627,道諦,left 56%; top 24%,已核定正式圖片；缺少原檔來源時回看 Notion／使用者附件，勿改用影片截圖
+9,系列繪本影片畫面,image+html_text,four-truths/book/images/related.jpg,1536,458,cc71b275383a5a0cde2a967f6bb3dc4eb38d3d602fe9c6140a9000cacf30ed9c,,,已核定正式圖片；缺少原檔來源時回看 Notion／使用者附件，勿改用影片截圖
+10,般若波羅蜜多心經,vertical_text,,,,,,,以核定網頁文字呈現
+11,片尾 · 製作說明,text,,,,,,,以核定網頁文字呈現
+12,片尾經典出處,source_section,,,,,,,保留 Notion 影片分鏡，繪本不另做本幕，內容整理至閱讀原經
