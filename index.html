@@ -5,7 +5,7 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://unpkg.com/lucide@latest"></script>
 <style>@keyframes dash {to {stroke-dashoffset:-1000;}} .animate-dash {animation:dash 60s linear infinite;} .no-scrollbar::-webkit-scrollbar {display:none;} .no-scrollbar {-ms-overflow-style:none;scrollbar-width:none;} body {-webkit-font-smoothing:antialiased;} .vertical-text {writing-mode:vertical-rl;text-orientation:upright;letter-spacing:0.25em;}</style>
-<meta name="description" content="從三十七道品修道地圖探索佛法，閱讀《四聖諦》與《五陰》繪本、經典原文，並觀看十四支佛法繪本影片。">
+<meta name="description" content="從三十七道品修道地圖探索佛法，閱讀《四聖諦》、《五陰》與《六處》繪本、經典原文，並觀看十四支佛法繪本影片。">
 <link rel="stylesheet" href="./shelf.css">
 </head>
 <body class="bg-slate-50 font-sans selection:bg-indigo-100 selection:text-indigo-900">
@@ -68,9 +68,9 @@
         <h2 id="shelf-title">佛法繪本書架</h2>
         <p>一頁一頁讀故事，想細看經文時，也能隨時翻回前一頁。</p>
       </div>
-      <p class="sz-shelf-count"><strong>14</strong> 冊系列 <span></span> <strong>2</strong> 冊可讀</p>
+      <p class="sz-shelf-count"><strong>14</strong> 冊系列 <span></span> <strong>3</strong> 冊可讀</p>
     </div>
-    <p class="sz-shelf-note">《四聖諦》與《五陰》已可翻閱，有鎖頭的繪本正在製作中，可先看對應影片。</p>
+    <p class="sz-shelf-note">《四聖諦》、《五陰》與《六處》已可翻閱，有鎖頭的繪本正在製作中，可先看對應影片。</p>
     <ol class="sz-books">
     <li>
       <a class="sz-book sz-gold sz-ready" href="./four-truths/book/" aria-label="四聖諦，開始閱讀繪本">
@@ -102,15 +102,18 @@
       </div>
     </li>
     <li>
-      <a class="sz-book sz-blue" href="#video-03" aria-label="六處，繪本待上架，前往對應影片">
+      <a class="sz-book sz-blue sz-ready" href="./six-senses/book/" aria-label="六處，開始閱讀繪本">
         <span class="sz-cover">
           <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M40 67V32m0 21c-9-2-17-9-18-19 11 0 18 8 18 19Zm0 0c9-2 17-9 18-19-11 0-18 8-18 19Z"/><circle cx="40" cy="23" r="6"/><path d="M22 23h-7m43 0h7M21 60l-6 5m44-5 6 5"/></svg>
           <span class="sz-book-number" aria-hidden="true">03 <span> / </span> 14</span>
-          <span class="sz-book-lock" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>
           <span class="sz-book-title">六處</span>
         </span>
-        <span class="sz-book-action">先看影片 ↘</span>
+        <span class="sz-book-action">開始閱讀 →</span>
       </a>
+      <div class="sz-book-links">
+        <a class="sz-book-source" href="./six-senses/" aria-label="主題導讀：《六處》">主題導讀</a>
+        <a class="sz-book-source" href="./six-senses/#sources" aria-label="閱讀原經：《六處》">閱讀原經</a>
+      </div>
     </li>
     <li>
       <a class="sz-book sz-ochre" href="#video-04" aria-label="十二因緣，繪本待上架，前往對應影片">
@@ -299,6 +302,7 @@ window.addEventListener('resize', positionReturnLine);
 document.fonts.ready.then(positionReturnLine);
 </script></body>
 </html>
+
 
 
 
