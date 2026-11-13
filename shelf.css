@@ -84,3 +84,11 @@ body.bg-slate-50 { background: var(--sz-paper); }
 .sz-book-lock svg { display: block; width: 1rem; height: 1rem; }
 .sz-book-links { display: flex; flex-wrap: wrap; justify-content: center; column-gap: .75rem; }
 .sz-book-links .sz-book-source { min-height: 2.75rem; }
+
+/* Six Senses shelf artwork */
+.sz-book[href="./six-senses/book/"] .sz-cover {
+  background: url("./six-senses/cover.webp") center / cover no-repeat;
+}
+.sz-book[href="./six-senses/book/"] .sz-cover > svg {
+  display: none;
+}
