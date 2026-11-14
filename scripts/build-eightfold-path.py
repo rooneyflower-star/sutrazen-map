@@ -44,12 +44,6 @@ PAIRINGS = {
     12: [(0, 'ma200', None)],
     13: [(0, 'sa771', None)],
 }
-NOTES = {
-    1: '', 2: '十善：不邪見', 3: '十善：不貪欲、不瞋恚',
-    4: '', 5: '十善：不妄語、不兩舌、不惡口、不綺語',
-    6: '十善：不偷盜、不殺生', 7: '十善：不邪淫',
-    8: '如法取得生活所需', 9: '', 10: '', 11: '', 12: '等捨', 13: '',
-}
 # Original quad illustrations are never cropped or altered.
 PANELS = {4: ['tl', 'tl', 'tr', 'bl'] + ['br'] * 6,
           5: ['tl'] * 8,
@@ -59,11 +53,12 @@ pages = []
 scenes = []
 for scene in story['scenes']:
     number = scene['scene']
-    scenes.append({'id': number, 'title': scene['title'], 'start': len(pages)})
+    scenes.append({'id': number, 'title': scene['title'], 'start': len(pages),
+                   'presentation': scene.get('presentation', {'overlays': []})})
     for index, subtitle in enumerate(scene['subtitles']):
         entry = {'scene': number, 'subtitle': index + 1,
                  'title': scene['title'], 'timeApprox': subtitle['timeApprox'],
-                 'lines': [subtitle['text']], 'note': NOTES[number],
+                 'lines': [subtitle['text']],
                  'image': '../../docs/eightfold-path/' + scene['asset'] if scene['asset'] else None,
                  'dimensions': dimensions.get(scene['asset']),
                  'focusPanel': PANELS.get(number, [None] * len(scene['subtitles']))[index],

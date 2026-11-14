@@ -118,7 +118,39 @@
         }
       ],
       "scriptureNotes": "《雜阿含經》784：何等為正志？謂出要志、無恚志、不害志。<br />影片亦出現《雜阿含經》1039（不貪、不瞋恚相關節錄）及241（眼根與欲境警策）；241完整引句尚待核對，不以故事改寫冒充原文。",
-      "scriptureStatus": "video-transcription-or-excerpt-needs-primary-text-verification"
+      "scriptureStatus": "video-transcription-or-excerpt-needs-primary-text-verification",
+      "presentation": {
+        "coordinateBasis": "displayed-image-percent",
+        "positionStatus": "preview-layout",
+        "positionNote": "先評估插畫左側；毒花與DANGER/TOXIC木牌無足夠空位，試排於上方中央偏右，避開臉部、羅盤與鐵槍。非原影片座標還原。",
+        "reserveLandscapeBands": true,
+        "overlays": [
+          {
+            "id": "right-intention-topic",
+            "lines": [
+              "八正道：正志",
+              "十善業道：不貪，不瞋恚"
+            ],
+            "x": 44.5,
+            "y": 2.5,
+            "width": 41,
+            "align": "left",
+            "fontSizeCqw": 3.1,
+            "minFontPx": 13.5,
+            "maxFontPx": 32,
+            "lineHeight": 1.32,
+            "backdrop": "soft",
+            "nowrap": true,
+            "fromSubtitle": 1,
+            "throughSubtitle": 10,
+            "portrait": {
+              "x": 44.5,
+              "y": 2.5,
+              "width": 41
+            }
+          }
+        ]
+      }
     },
     {
       "scene": 4,

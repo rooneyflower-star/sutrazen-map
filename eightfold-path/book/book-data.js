@@ -4,67 +4,135 @@ const BOOK = {
     {
       "id": 1,
       "title": "片頭｜黑暗中摸索",
-      "start": 0
+      "start": 0,
+      "presentation": {
+        "overlays": []
+      }
     },
     {
       "id": 2,
       "title": "正見｜看清地圖",
-      "start": 1
+      "start": 1,
+      "presentation": {
+        "overlays": []
+      }
     },
     {
       "id": 3,
       "title": "正志｜校正羅盤",
-      "start": 11
+      "start": 11,
+      "presentation": {
+        "coordinateBasis": "displayed-image-percent",
+        "positionStatus": "preview-layout",
+        "positionNote": "先評估插畫左側；毒花與DANGER/TOXIC木牌無足夠空位，試排於上方中央偏右，避開臉部、羅盤與鐵槍。非原影片座標還原。",
+        "reserveLandscapeBands": true,
+        "overlays": [
+          {
+            "id": "right-intention-topic",
+            "lines": [
+              "八正道：正志",
+              "十善業道：不貪，不瞋恚"
+            ],
+            "x": 44.5,
+            "y": 2.5,
+            "width": 41,
+            "align": "left",
+            "fontSizeCqw": 3.1,
+            "minFontPx": 13.5,
+            "maxFontPx": 32,
+            "lineHeight": 1.32,
+            "backdrop": "soft",
+            "nowrap": true,
+            "fromSubtitle": 1,
+            "throughSubtitle": 10,
+            "portrait": {
+              "x": 44.5,
+              "y": 2.5,
+              "width": 41
+            }
+          }
+        ]
+      }
     },
     {
       "id": 4,
       "title": "反例｜惡行使心不安",
-      "start": 21
+      "start": 21,
+      "presentation": {
+        "overlays": []
+      }
     },
     {
       "id": 5,
       "title": "正語｜慚愧與誠實",
-      "start": 31
+      "start": 31,
+      "presentation": {
+        "overlays": []
+      }
     },
     {
       "id": 6,
       "title": "正業｜不偷盜、不殺生與無悔",
-      "start": 39
+      "start": 39,
+      "presentation": {
+        "overlays": []
+      }
     },
     {
       "id": 7,
       "title": "正業｜不邪淫",
-      "start": 47
+      "start": 47,
+      "presentation": {
+        "overlays": []
+      }
     },
     {
       "id": 8,
       "title": "正命｜清淨的生活所需",
-      "start": 50
+      "start": 50,
+      "presentation": {
+        "overlays": []
+      }
     },
     {
       "id": 9,
       "title": "正方便／正精進｜逆流划槳",
-      "start": 59
+      "start": 59,
+      "presentation": {
+        "overlays": []
+      }
     },
     {
       "id": 10,
       "title": "正念｜記得方向、看清浪頭",
-      "start": 72
+      "start": 72,
+      "presentation": {
+        "overlays": []
+      }
     },
     {
       "id": 11,
       "title": "正定｜澄澈水面",
-      "start": 86
+      "start": 86,
+      "presentation": {
+        "overlays": []
+      }
     },
     {
       "id": 12,
       "title": "抵岸｜筏喻與等捨",
-      "start": 97
+      "start": 97,
+      "presentation": {
+        "overlays": []
+      }
     },
     {
       "id": 13,
       "title": "總結與經典出處",
-      "start": 108
+      "start": 108,
+      "presentation": {
+        "overlays": []
+      }
     }
   ],
   "pages": [
@@ -76,7 +144,6 @@ const BOOK = {
       "lines": [
         "在太陽還沒出來之前，我們習慣在黑暗中摸索，以為我們所認知的就是真實。"
       ],
-      "note": "",
       "image": "../../docs/eightfold-path/assets/01-darkness.webp",
       "dimensions": [
         2752,
@@ -95,7 +162,6 @@ const BOOK = {
       "lines": [
         "陽光灑下，小貓終於看清了手中這張名為「正見」的地圖。"
       ],
-      "note": "十善：不邪見",
       "image": "../../docs/eightfold-path/assets/02-right-view.webp",
       "dimensions": [
         2752,
@@ -114,7 +180,6 @@ const BOOK = {
       "lines": [
         "表面上，這張地圖標示著「哪裡安全，哪裡危險」。"
       ],
-      "note": "十善：不邪見",
       "image": "../../docs/eightfold-path/assets/02-right-view.webp",
       "dimensions": [
         2752,
@@ -133,7 +198,6 @@ const BOOK = {
       "lines": [
         "它告訴我們：相信布施與善行是有價值的，相信善惡都有回報；"
       ],
-      "note": "十善：不邪見",
       "image": "../../docs/eightfold-path/assets/02-right-view.webp",
       "dimensions": [
         2752,
@@ -152,7 +216,6 @@ const BOOK = {
       "lines": [
         "相信有前世與來世，相信父母有養育之恩；"
       ],
-      "note": "十善：不邪見",
       "image": "../../docs/eightfold-path/assets/02-right-view.webp",
       "dimensions": [
         2752,
@@ -171,7 +234,6 @@ const BOOK = {
       "lines": [
         "並且相信，這世上真有修行證悟的阿羅漢，已經徹底超越了輪迴的苦。"
       ],
-      "note": "十善：不邪見",
       "image": "../../docs/eightfold-path/assets/02-right-view.webp",
       "dimensions": [
         2752,
@@ -190,7 +252,6 @@ const BOOK = {
       "lines": [
         "但這還不夠，「正見」地圖還有更深層的指引。"
       ],
-      "note": "十善：不邪見",
       "image": "../../docs/eightfold-path/assets/02-right-view.webp",
       "dimensions": [
         2752,
@@ -209,7 +270,6 @@ const BOOK = {
       "lines": [
         "要渡過眼前這條生老病死的「生死之流」，"
       ],
-      "note": "十善：不邪見",
       "image": "../../docs/eightfold-path/assets/02-right-view.webp",
       "dimensions": [
         2752,
@@ -228,7 +288,6 @@ const BOOK = {
       "lines": [
         "我們需要看透「苦」的真相，以及煩惱止息的路徑。"
       ],
-      "note": "十善：不邪見",
       "image": "../../docs/eightfold-path/assets/02-right-view.webp",
       "dimensions": [
         2752,
@@ -247,7 +306,6 @@ const BOOK = {
       "lines": [
         "只有看懂了這條隱藏的路線，"
       ],
-      "note": "十善：不邪見",
       "image": "../../docs/eightfold-path/assets/02-right-view.webp",
       "dimensions": [
         2752,
@@ -266,7 +324,6 @@ const BOOK = {
       "lines": [
         "我們才能從不停打轉的岸邊，真正出發，前往安穩的彼岸。"
       ],
-      "note": "十善：不邪見",
       "image": "../../docs/eightfold-path/assets/02-right-view.webp",
       "dimensions": [
         2752,
@@ -285,7 +342,6 @@ const BOOK = {
       "lines": [
         "有了地圖，我們還需要一個不受干擾的羅盤。"
       ],
-      "note": "十善：不貪欲、不瞋恚",
       "image": "../../docs/eightfold-path/assets/03-right-intention.webp",
       "dimensions": [
         1536,
@@ -304,7 +360,6 @@ const BOOK = {
       "lines": [
         "過去，我們心裡的指針總是瘋狂亂轉。"
       ],
-      "note": "十善：不貪欲、不瞋恚",
       "image": "../../docs/eightfold-path/assets/03-right-intention.webp",
       "dimensions": [
         1536,
@@ -323,7 +378,6 @@ const BOOK = {
       "lines": [
         "一下倒向「貪婪」，想抓取喜歡的；一下偏向「憤怒」，想推開討厭的。"
       ],
-      "note": "十善：不貪欲、不瞋恚",
       "image": "../../docs/eightfold-path/assets/03-right-intention.webp",
       "dimensions": [
         1536,
@@ -342,7 +396,6 @@ const BOOK = {
       "lines": [
         "為了讓混亂停下來，小貓想起了佛陀沉重的叮嚀："
       ],
-      "note": "十善：不貪欲、不瞋恚",
       "image": "../../docs/eightfold-path/assets/03-right-intention.webp",
       "dimensions": [
         1536,
@@ -361,7 +414,6 @@ const BOOK = {
       "lines": [
         "「寧可眼睛被燒熱的鐵槍刺中，也不要被慾望的畫面勾走。」"
       ],
-      "note": "十善：不貪欲、不瞋恚",
       "image": "../../docs/eightfold-path/assets/03-right-intention.webp",
       "dimensions": [
         1536,
@@ -380,7 +432,6 @@ const BOOK = {
       "lines": [
         "抱著這份如鐵槍般堅定的決心，小貓終於將指針校正回三個安全的方向："
       ],
-      "note": "十善：不貪欲、不瞋恚",
       "image": "../../docs/eightfold-path/assets/03-right-intention.webp",
       "dimensions": [
         1536,
@@ -399,7 +450,6 @@ const BOOK = {
       "lines": [
         "第一是「離欲」，學會鬆開手，不再執著一定要擁有。"
       ],
-      "note": "十善：不貪欲、不瞋恚",
       "image": "../../docs/eightfold-path/assets/03-right-intention.webp",
       "dimensions": [
         1536,
@@ -418,7 +468,6 @@ const BOOK = {
       "lines": [
         "第二是「不生氣」，把心裡的刺拔掉，不再懷抱敵意。"
       ],
-      "note": "十善：不貪欲、不瞋恚",
       "image": "../../docs/eightfold-path/assets/03-right-intention.webp",
       "dimensions": [
         1536,
@@ -437,7 +486,6 @@ const BOOK = {
       "lines": [
         "第三是「不害」，溫柔對待每一個生命，不造成傷害。"
       ],
-      "note": "十善：不貪欲、不瞋恚",
       "image": "../../docs/eightfold-path/assets/03-right-intention.webp",
       "dimensions": [
         1536,
@@ -456,7 +504,6 @@ const BOOK = {
       "lines": [
         "當指針不再搖擺，我們就能順著真理的水流，穿越煩惱，直達彼岸。"
       ],
-      "note": "十善：不貪欲、不瞋恚",
       "image": "../../docs/eightfold-path/assets/03-right-intention.webp",
       "dimensions": [
         1536,
@@ -475,7 +522,6 @@ const BOOK = {
       "lines": [
         "但是，森林裡總是充滿誘惑。有時候，我們為了求快，"
       ],
-      "note": "",
       "image": "../../docs/eightfold-path/assets/04-unwholesome-actions.webp",
       "dimensions": [
         2752,
@@ -494,7 +540,6 @@ const BOOK = {
       "lines": [
         "會想：「稍微違規一下應該沒關係？」"
       ],
-      "note": "",
       "image": "../../docs/eightfold-path/assets/04-unwholesome-actions.webp",
       "dimensions": [
         2752,
@@ -513,7 +558,6 @@ const BOOK = {
       "lines": [
         "於是，小貓偷偷砍了不該砍的樹，卻意外摔碎了無辜的鳥蛋。"
       ],
-      "note": "",
       "image": "../../docs/eightfold-path/assets/04-unwholesome-actions.webp",
       "dimensions": [
         2752,
@@ -532,7 +576,6 @@ const BOOK = {
       "lines": [
         "當守護者來問話時，為了保護自己，小貓把斧頭藏在背後，說了謊話。"
       ],
-      "note": "",
       "image": "../../docs/eightfold-path/assets/04-unwholesome-actions.webp",
       "dimensions": [
         2752,
@@ -551,7 +594,6 @@ const BOOK = {
       "lines": [
         "雖然木筏好像很快就造好了，但當晚，小貓卻睡不著了。"
       ],
-      "note": "",
       "image": "../../docs/eightfold-path/assets/04-unwholesome-actions.webp",
       "dimensions": [
         2752,
@@ -570,7 +612,6 @@ const BOOK = {
       "lines": [
         "破碎的蛋、說謊的恐懼，變成了惡夢，在心裡吵個不停。"
       ],
-      "note": "",
       "image": "../../docs/eightfold-path/assets/04-unwholesome-actions.webp",
       "dimensions": [
         2752,
@@ -589,7 +630,6 @@ const BOOK = {
       "lines": [
         "佛陀說：我們之所以要守規矩，不是為了討好誰，而是為了「沒有後悔」。"
       ],
-      "note": "",
       "image": "../../docs/eightfold-path/assets/04-unwholesome-actions.webp",
       "dimensions": [
         2752,
@@ -608,7 +648,6 @@ const BOOK = {
       "lines": [
         "一旦心裡有了疙瘩，快樂就進不來，心也靜不下來。"
       ],
-      "note": "",
       "image": "../../docs/eightfold-path/assets/04-unwholesome-actions.webp",
       "dimensions": [
         2752,
@@ -627,7 +666,6 @@ const BOOK = {
       "lines": [
         "漏水的船，是無法在風浪中保持穩定的。"
       ],
-      "note": "",
       "image": "../../docs/eightfold-path/assets/04-unwholesome-actions.webp",
       "dimensions": [
         2752,
@@ -646,7 +684,6 @@ const BOOK = {
       "lines": [
         "這就是為什麼，想要前往彼岸，我們必須先修補這些行為的破洞。"
       ],
-      "note": "",
       "image": "../../docs/eightfold-path/assets/04-unwholesome-actions.webp",
       "dimensions": [
         2752,
@@ -665,7 +702,6 @@ const BOOK = {
       "lines": [
         "當太陽升起，光線照進了心裡，小貓看見了昨晚做的惡夢，感到一陣慚愧。"
       ],
-      "note": "十善：不妄語、不兩舌、不惡口、不綺語",
       "image": "../../docs/eightfold-path/assets/05-wholesome-actions.webp",
       "dimensions": [
         2752,
@@ -684,7 +720,6 @@ const BOOK = {
       "lines": [
         "這份羞恥心像是一場及時雨，洗去了貪婪的衝動。於是，小貓決定重新開始。"
       ],
-      "note": "十善：不妄語、不兩舌、不惡口、不綺語",
       "image": "../../docs/eightfold-path/assets/05-wholesome-actions.webp",
       "dimensions": [
         2752,
@@ -703,7 +738,6 @@ const BOOK = {
       "lines": [
         "牠鼓起勇氣，走向黑熊守護者，深深鞠躬說：「對不起，昨天是我說謊了。」"
       ],
-      "note": "十善：不妄語、不兩舌、不惡口、不綺語",
       "image": "../../docs/eightfold-path/assets/05-wholesome-actions.webp",
       "dimensions": [
         2752,
@@ -722,7 +756,6 @@ const BOOK = {
       "lines": [
         "這是「正語」中的不妄語，誠實讓心裡的石頭放下了。"
       ],
-      "note": "十善：不妄語、不兩舌、不惡口、不綺語",
       "image": "../../docs/eightfold-path/assets/05-wholesome-actions.webp",
       "dimensions": [
         2752,
@@ -741,7 +774,6 @@ const BOOK = {
       "lines": [
         "小貓終於明白，語言是用來連結彼此的橋樑，而不是傷害的武器。"
       ],
-      "note": "十善：不妄語、不兩舌、不惡口、不綺語",
       "image": "../../docs/eightfold-path/assets/05-wholesome-actions.webp",
       "dimensions": [
         2752,
@@ -760,7 +792,6 @@ const BOOK = {
       "lines": [
         "因此，牠在心裡許下了四個約定：不妄語，不說謊話欺騙別人；"
       ],
-      "note": "十善：不妄語、不兩舌、不惡口、不綺語",
       "image": "../../docs/eightfold-path/assets/05-wholesome-actions.webp",
       "dimensions": [
         2752,
@@ -779,7 +810,6 @@ const BOOK = {
       "lines": [
         "不兩舌，不說壞話挑撥感情；不惡口，不說粗話刺傷人心；"
       ],
-      "note": "十善：不妄語、不兩舌、不惡口、不綺語",
       "image": "../../docs/eightfold-path/assets/05-wholesome-actions.webp",
       "dimensions": [
         2752,
@@ -798,7 +828,6 @@ const BOOK = {
       "lines": [
         "不綺語，不說沒有意義的廢話浪費時間。只說溫暖、真實且有用的話。"
       ],
-      "note": "十善：不妄語、不兩舌、不惡口、不綺語",
       "image": "../../docs/eightfold-path/assets/05-wholesome-actions.webp",
       "dimensions": [
         2752,
@@ -817,7 +846,6 @@ const BOOK = {
       "lines": [
         "接著，牠回到河邊。這一次，牠不再砍樹。只撿拾地上允許取用的漂流木，"
       ],
-      "note": "十善：不偷盜、不殺生",
       "image": "../../docs/eightfold-path/assets/05-wholesome-actions.webp",
       "dimensions": [
         2752,
@@ -836,7 +864,6 @@ const BOOK = {
       "lines": [
         "尊重森林的給予。這是正業中的「不偷盜」。"
       ],
-      "note": "十善：不偷盜、不殺生",
       "image": "../../docs/eightfold-path/assets/05-wholesome-actions.webp",
       "dimensions": [
         2752,
@@ -855,7 +882,6 @@ const BOOK = {
       "lines": [
         "當牠發現木頭上有隻小蟲時，牠輕輕地把蟲移到安全的草地上。"
       ],
-      "note": "十善：不偷盜、不殺生",
       "image": "../../docs/eightfold-path/assets/05-wholesome-actions.webp",
       "dimensions": [
         2752,
@@ -874,7 +900,6 @@ const BOOK = {
       "lines": [
         "這是正業中的「不殺生」，也是對生命的溫柔。"
       ],
-      "note": "十善：不偷盜、不殺生",
       "image": "../../docs/eightfold-path/assets/05-wholesome-actions.webp",
       "dimensions": [
         2752,
@@ -893,7 +918,6 @@ const BOOK = {
       "lines": [
         "那一天晚上，小貓躺在修好的木筏上，睡得好香好甜。沒有惡夢。"
       ],
-      "note": "十善：不偷盜、不殺生",
       "image": "../../docs/eightfold-path/assets/05-wholesome-actions.webp",
       "dimensions": [
         2752,
@@ -912,7 +936,6 @@ const BOOK = {
       "lines": [
         "佛陀告訴伽藍人一個秘密：做好事，不是為了討好神，"
       ],
-      "note": "十善：不偷盜、不殺生",
       "image": "../../docs/eightfold-path/assets/05-wholesome-actions.webp",
       "dimensions": [
         2752,
@@ -931,7 +954,6 @@ const BOOK = {
       "lines": [
         "而是為了現在就活得安心。因為行為乾淨了，心就不會後悔。"
       ],
-      "note": "十善：不偷盜、不殺生",
       "image": "../../docs/eightfold-path/assets/05-wholesome-actions.webp",
       "dimensions": [
         2752,
@@ -950,7 +972,6 @@ const BOOK = {
       "lines": [
         "名為「無悔」的木筏，才能載著我們，平穩地航向安靜的水域。"
       ],
-      "note": "十善：不偷盜、不殺生",
       "image": "../../docs/eightfold-path/assets/05-wholesome-actions.webp",
       "dimensions": [
         2752,
@@ -969,7 +990,6 @@ const BOOK = {
       "lines": [
         "同時，小貓學會了尊重界線。看見森林裡其他動物的伴侶與家庭，"
       ],
-      "note": "十善：不邪淫",
       "image": "../../docs/eightfold-path/assets/07-right-action-swans.webp",
       "dimensions": [
         2752,
@@ -988,7 +1008,6 @@ const BOOK = {
       "lines": [
         "牠只是靜靜經過，絕不隨意干擾。這是正業中的「不邪淫」。"
       ],
-      "note": "十善：不邪淫",
       "image": "../../docs/eightfold-path/assets/07-right-action-swans.webp",
       "dimensions": [
         2752,
@@ -1007,7 +1026,6 @@ const BOOK = {
       "lines": [
         "守護他人的承諾與親密關係，就是守護自己內心的純淨。"
       ],
-      "note": "十善：不邪淫",
       "image": "../../docs/eightfold-path/assets/07-right-action-swans.webp",
       "dimensions": [
         2752,
@@ -1026,7 +1044,6 @@ const BOOK = {
       "lines": [
         "木筏造好了，但渡河的旅程還很長，小貓需要維持體力。"
       ],
-      "note": "如法取得生活所需",
       "image": "../../docs/eightfold-path/assets/08-right-livelihood.webp",
       "dimensions": [
         2752,
@@ -1045,7 +1062,6 @@ const BOOK = {
       "lines": [
         "這就是「正命」，選擇一種清淨的生存方式。"
       ],
-      "note": "如法取得生活所需",
       "image": "../../docs/eightfold-path/assets/08-right-livelihood.webp",
       "dimensions": [
         2752,
@@ -1064,7 +1080,6 @@ const BOOK = {
       "lines": [
         "在這個森林裡，有些動物為了食物會去設陷阱、去搶奪。"
       ],
-      "note": "如法取得生活所需",
       "image": "../../docs/eightfold-path/assets/08-right-livelihood.webp",
       "dimensions": [
         2752,
@@ -1083,7 +1098,6 @@ const BOOK = {
       "lines": [
         "但小貓記得地圖上的指引：「吃下不乾淨的食物，身體會生病；"
       ],
-      "note": "如法取得生活所需",
       "image": "../../docs/eightfold-path/assets/08-right-livelihood.webp",
       "dimensions": [
         2752,
@@ -1102,7 +1116,6 @@ const BOOK = {
       "lines": [
         "用傷害換來的糧食，心靈會沉重。」"
       ],
-      "note": "如法取得生活所需",
       "image": "../../docs/eightfold-path/assets/08-right-livelihood.webp",
       "dimensions": [
         2752,
@@ -1121,7 +1134,6 @@ const BOOK = {
       "lines": [
         "於是，牠用誠實的勞動，換取剛好足夠的果實與藥草。"
       ],
-      "note": "如法取得生活所需",
       "image": "../../docs/eightfold-path/assets/08-right-livelihood.webp",
       "dimensions": [
         2752,
@@ -1140,7 +1152,6 @@ const BOOK = {
       "lines": [
         "牠不貪心，也不囤積多餘的財寶。"
       ],
-      "note": "如法取得生活所需",
       "image": "../../docs/eightfold-path/assets/08-right-livelihood.webp",
       "dimensions": [
         2752,
@@ -1159,7 +1170,6 @@ const BOOK = {
       "lines": [
         "佛陀說：「如法地獲取生活所需，守住慾望的界線。」"
       ],
-      "note": "如法取得生活所需",
       "image": "../../docs/eightfold-path/assets/08-right-livelihood.webp",
       "dimensions": [
         2752,
@@ -1178,7 +1188,6 @@ const BOOK = {
       "lines": [
         "只有行囊是輕盈且乾淨的，我們才能在前往彼岸的風浪中，保持平衡，不會沉沒。"
       ],
-      "note": "如法取得生活所需",
       "image": "../../docs/eightfold-path/assets/08-right-livelihood.webp",
       "dimensions": [
         2752,
@@ -1197,7 +1206,6 @@ const BOOK = {
       "lines": [
         "木筏終於下水了，但小貓發現，河流的水流比想像中更急。"
       ],
-      "note": "",
       "image": "../../docs/eightfold-path/assets/09-right-effort.webp",
       "dimensions": [
         2752,
@@ -1216,7 +1224,6 @@ const BOOK = {
       "lines": [
         "這條名為「輪迴」的大河，總是想把我們沖回下游，"
       ],
-      "note": "",
       "image": "../../docs/eightfold-path/assets/09-right-effort.webp",
       "dimensions": [
         2752,
@@ -1235,7 +1242,6 @@ const BOOK = {
       "lines": [
         "沖回那個充滿貪愛與黑暗的老地方。"
       ],
-      "note": "",
       "image": "../../docs/eightfold-path/assets/09-right-effort.webp",
       "dimensions": [
         2752,
@@ -1254,7 +1260,6 @@ const BOOK = {
       "lines": [
         "這時候，我們需要「正方便」，也就是正確的努力。"
       ],
-      "note": "",
       "image": "../../docs/eightfold-path/assets/09-right-effort.webp",
       "dimensions": [
         2752,
@@ -1273,7 +1278,6 @@ const BOOK = {
       "lines": [
         "過去，我們也很努力，忙著追逐快樂、忙著逃避痛苦，"
       ],
-      "note": "",
       "image": "../../docs/eightfold-path/assets/09-right-effort.webp",
       "dimensions": [
         2752,
@@ -1292,7 +1296,6 @@ const BOOK = {
       "lines": [
         "結果卻讓自己更累。這是世俗的有漏努力。"
       ],
-      "note": "",
       "image": "../../docs/eightfold-path/assets/09-right-effort.webp",
       "dimensions": [
         2752,
@@ -1311,7 +1314,6 @@ const BOOK = {
       "lines": [
         "但現在，小貓的努力有了新的目標，「逆流而上」，這是出世間的無漏努力。"
       ],
-      "note": "",
       "image": "../../docs/eightfold-path/assets/09-right-effort.webp",
       "dimensions": [
         2752,
@@ -1330,7 +1332,6 @@ const BOOK = {
       "lines": [
         "這需要一股持續不斷的力氣：看到前方漂來的惡念浮木，用力把它推開；"
       ],
-      "note": "",
       "image": "../../docs/eightfold-path/assets/09-right-effort.webp",
       "dimensions": [
         2752,
@@ -1349,7 +1350,6 @@ const BOOK = {
       "lines": [
         "看到乾淨的善念水道，奮力划過去。"
       ],
-      "note": "",
       "image": "../../docs/eightfold-path/assets/09-right-effort.webp",
       "dimensions": [
         2752,
@@ -1368,7 +1368,6 @@ const BOOK = {
       "lines": [
         "這不是蠻力，而是一種「不讓心隨波逐流」的堅持。佛陀說：「常不休息。」"
       ],
-      "note": "",
       "image": "../../docs/eightfold-path/assets/09-right-effort.webp",
       "dimensions": [
         2752,
@@ -1387,7 +1386,6 @@ const BOOK = {
       "lines": [
         "因為在湍急的生死流中，只要一停下來，我們就會後退。"
       ],
-      "note": "",
       "image": "../../docs/eightfold-path/assets/09-right-effort.webp",
       "dimensions": [
         2752,
@@ -1406,7 +1404,6 @@ const BOOK = {
       "lines": [
         "只有握緊槳持續不斷地划，這股不想回頭的勇氣，"
       ],
-      "note": "",
       "image": "../../docs/eightfold-path/assets/09-right-effort.webp",
       "dimensions": [
         2752,
@@ -1425,7 +1422,6 @@ const BOOK = {
       "lines": [
         "終將帶我們穿越風浪，抵達彼岸。"
       ],
-      "note": "",
       "image": "../../docs/eightfold-path/assets/09-right-effort.webp",
       "dimensions": [
         2752,
@@ -1444,7 +1440,6 @@ const BOOK = {
       "lines": [
         "船在逆流中前進，這時我們需要一位最清醒的守門人，叫做「正念」。"
       ],
-      "note": "",
       "image": "../../docs/eightfold-path/assets/10-right-mindfulness.webp",
       "dimensions": [
         2752,
@@ -1463,7 +1458,6 @@ const BOOK = {
       "lines": [
         "小貓站在船頭，睜大眼睛，時刻執行著兩項重要的任務。"
       ],
-      "note": "",
       "image": "../../docs/eightfold-path/assets/10-right-mindfulness.webp",
       "dimensions": [
         2752,
@@ -1482,7 +1476,6 @@ const BOOK = {
       "lines": [
         "第一項任務是「記得」（世俗正念）：記得手中的地圖，記得我們要去哪裡。"
       ],
-      "note": "",
       "image": "../../docs/eightfold-path/assets/10-right-mindfulness.webp",
       "dimensions": [
         2752,
@@ -1501,7 +1494,6 @@ const BOOK = {
       "lines": [
         "如果不小心分神了，就像那隻愛亂跑的猴子又想去抓路邊的樹枝，"
       ],
-      "note": "",
       "image": "../../docs/eightfold-path/assets/10-right-mindfulness.webp",
       "dimensions": [
         2752,
@@ -1520,7 +1512,6 @@ const BOOK = {
       "lines": [
         "正念會溫柔地提醒：「嘿，回來！那不是我們要去的方向。」"
       ],
-      "note": "",
       "image": "../../docs/eightfold-path/assets/10-right-mindfulness.webp",
       "dimensions": [
         2752,
@@ -1539,7 +1530,6 @@ const BOOK = {
       "lines": [
         "第二項任務是「看清」（出世間正念）："
       ],
-      "note": "",
       "image": "../../docs/eightfold-path/assets/10-right-mindfulness.webp",
       "dimensions": [
         2752,
@@ -1558,7 +1548,6 @@ const BOOK = {
       "lines": [
         "這條河上隨時會打來名為「貪愛」與「憤怒」的巨浪。"
       ],
-      "note": "",
       "image": "../../docs/eightfold-path/assets/10-right-mindfulness.webp",
       "dimensions": [
         2752,
@@ -1577,7 +1566,6 @@ const BOOK = {
       "lines": [
         "如果沒有看清楚，我們很容易就被捲進水裡喝毒水。"
       ],
-      "note": "",
       "image": "../../docs/eightfold-path/assets/10-right-mindfulness.webp",
       "dimensions": [
         2752,
@@ -1596,7 +1584,6 @@ const BOOK = {
       "lines": [
         "但有了正念，小貓能清清楚楚地看著每一個浪頭打過來。"
       ],
-      "note": "",
       "image": "../../docs/eightfold-path/assets/10-right-mindfulness.webp",
       "dimensions": [
         2752,
@@ -1615,7 +1602,6 @@ const BOOK = {
       "lines": [
         "牠運用四聖諦的智慧看著浪花："
       ],
-      "note": "",
       "image": "../../docs/eightfold-path/assets/10-right-mindfulness.webp",
       "dimensions": [
         2752,
@@ -1634,7 +1620,6 @@ const BOOK = {
       "lines": [
         "「喔！這是一個生氣的浪（苦），是因為我不喜歡被潑溼（集）。」"
       ],
-      "note": "",
       "image": "../../docs/eightfold-path/assets/10-right-mindfulness.webp",
       "dimensions": [
         2752,
@@ -1653,7 +1638,6 @@ const BOOK = {
       "lines": [
         "因為看見了，所以不被捲走。牠不對浪花發脾氣，"
       ],
-      "note": "",
       "image": "../../docs/eightfold-path/assets/10-right-mindfulness.webp",
       "dimensions": [
         2752,
@@ -1672,7 +1656,6 @@ const BOOK = {
       "lines": [
         "也不跳進水裡追逐浪花。只是穩穩地站著，讓浪頭從船邊流過。"
       ],
-      "note": "",
       "image": "../../docs/eightfold-path/assets/10-right-mindfulness.webp",
       "dimensions": [
         2752,
@@ -1691,7 +1674,6 @@ const BOOK = {
       "lines": [
         "這份清澈的覺知，守護著木筏，讓心在風浪中依然保持安穩。"
       ],
-      "note": "",
       "image": "../../docs/eightfold-path/assets/10-right-mindfulness.webp",
       "dimensions": [
         2752,
@@ -1710,7 +1692,6 @@ const BOOK = {
       "lines": [
         "在經歷了「正方便」的奮力划槳，與「正念」的時刻守望之後，"
       ],
-      "note": "",
       "image": "../../docs/eightfold-path/assets/11-right-concentration.webp",
       "dimensions": [
         2752,
@@ -1729,7 +1710,6 @@ const BOOK = {
       "lines": [
         "小貓終於來到了一片不可思議的水域。"
       ],
-      "note": "",
       "image": "../../docs/eightfold-path/assets/11-right-concentration.webp",
       "dimensions": [
         2752,
@@ -1748,7 +1728,6 @@ const BOOK = {
       "lines": [
         "這裡沒有風，也沒有浪。這就是「正定」。"
       ],
-      "note": "",
       "image": "../../docs/eightfold-path/assets/11-right-concentration.webp",
       "dimensions": [
         2752,
@@ -1767,7 +1746,6 @@ const BOOK = {
       "lines": [
         "過去，我們的心像是一杯混濁搖晃的水，什麼都看不清楚。"
       ],
-      "note": "",
       "image": "../../docs/eightfold-path/assets/11-right-concentration.webp",
       "dimensions": [
         2752,
@@ -1786,7 +1764,6 @@ const BOOK = {
       "lines": [
         "但現在，因為不再隨意抓取，也不再被情緒攪動，這杯水終於完全靜了下來。"
       ],
-      "note": "",
       "image": "../../docs/eightfold-path/assets/11-right-concentration.webp",
       "dimensions": [
         2752,
@@ -1805,7 +1782,6 @@ const BOOK = {
       "lines": [
         "小貓把心收攝回來，安住在這份深邃的寧靜裡。"
       ],
-      "note": "",
       "image": "../../docs/eightfold-path/assets/11-right-concentration.webp",
       "dimensions": [
         2752,
@@ -1824,7 +1800,6 @@ const BOOK = {
       "lines": [
         "這不僅是放鬆，更是一種極致的專注。"
       ],
-      "note": "",
       "image": "../../docs/eightfold-path/assets/11-right-concentration.webp",
       "dimensions": [
         2752,
@@ -1843,7 +1818,6 @@ const BOOK = {
       "lines": [
         "佛陀說：「因定，便得見如實。」就像眼前這片如鏡子般的水面，"
       ],
-      "note": "",
       "image": "../../docs/eightfold-path/assets/11-right-concentration.webp",
       "dimensions": [
         2752,
@@ -1862,7 +1836,6 @@ const BOOK = {
       "lines": [
         "只有當波紋完全消失時，四聖諦的真理才能像天上的月亮，"
       ],
-      "note": "",
       "image": "../../docs/eightfold-path/assets/11-right-concentration.webp",
       "dimensions": [
         2752,
@@ -1881,7 +1854,6 @@ const BOOK = {
       "lines": [
         "毫無扭曲地、完整地映照在我們心裡。"
       ],
-      "note": "",
       "image": "../../docs/eightfold-path/assets/11-right-concentration.webp",
       "dimensions": [
         2752,
@@ -1900,7 +1872,6 @@ const BOOK = {
       "lines": [
         "木筏終於載著小貓，在清澈的月光下，穩穩地靠向了彼岸。"
       ],
-      "note": "",
       "image": "../../docs/eightfold-path/assets/11-right-concentration.webp",
       "dimensions": [
         2752,
@@ -1919,7 +1890,6 @@ const BOOK = {
       "lines": [
         "終於，木筏輕輕地觸碰到了對岸的沙灘。小貓抵達了安全的地方。"
       ],
-      "note": "等捨",
       "image": "../../docs/eightfold-path/assets/12-leaving-raft.webp",
       "dimensions": [
         2752,
@@ -1938,7 +1908,6 @@ const BOOK = {
       "lines": [
         "這時候，最後一個問題來了："
       ],
-      "note": "等捨",
       "image": "../../docs/eightfold-path/assets/12-leaving-raft.webp",
       "dimensions": [
         2752,
@@ -1957,7 +1926,6 @@ const BOOK = {
       "lines": [
         "這個陪伴我們度過驚濤駭浪的木筏，該如何處理呢？"
       ],
-      "note": "等捨",
       "image": "../../docs/eightfold-path/assets/12-leaving-raft.webp",
       "dimensions": [
         2752,
@@ -1976,7 +1944,6 @@ const BOOK = {
       "lines": [
         "是要把它背在背上，繼續趕路嗎？"
       ],
-      "note": "等捨",
       "image": "../../docs/eightfold-path/assets/12-leaving-raft.webp",
       "dimensions": [
         2752,
@@ -1995,7 +1962,6 @@ const BOOK = {
       "lines": [
         "不，那樣太沉重了。佛陀笑著說：「渡河是為了登岸，登岸後就該放下。」"
       ],
-      "note": "等捨",
       "image": "../../docs/eightfold-path/assets/12-leaving-raft.webp",
       "dimensions": [
         2752,
@@ -2014,7 +1980,6 @@ const BOOK = {
       "lines": [
         "於是，小貓回頭，對著木筏（八正道）深深地道謝。"
       ],
-      "note": "等捨",
       "image": "../../docs/eightfold-path/assets/12-leaving-raft.webp",
       "dimensions": [
         2752,
@@ -2033,7 +1998,6 @@ const BOOK = {
       "lines": [
         "感謝正見引路，感謝正定安神。但現在，是時候告別了。"
       ],
-      "note": "等捨",
       "image": "../../docs/eightfold-path/assets/12-leaving-raft.webp",
       "dimensions": [
         2752,
@@ -2052,7 +2016,6 @@ const BOOK = {
       "lines": [
         "小貓輕輕跳上岸，連同對「好」的執著也一起放下。"
       ],
-      "note": "等捨",
       "image": "../../docs/eightfold-path/assets/12-leaving-raft.webp",
       "dimensions": [
         2752,
@@ -2071,7 +2034,6 @@ const BOOK = {
       "lines": [
         "此刻的牠，兩手空空，卻擁有前所未有的自由。"
       ],
-      "note": "等捨",
       "image": "../../docs/eightfold-path/assets/12-leaving-raft.webp",
       "dimensions": [
         2752,
@@ -2090,7 +2052,6 @@ const BOOK = {
       "lines": [
         "這就是古仙人走過的最後一步：法尚應捨，何況非法？"
       ],
-      "note": "等捨",
       "image": "../../docs/eightfold-path/assets/12-leaving-raft.webp",
       "dimensions": [
         2752,
@@ -2109,7 +2070,6 @@ const BOOK = {
       "lines": [
         "在解脫的彼岸，沒有恐懼，沒有束縛，只有無限寬廣的安寧。"
       ],
-      "note": "等捨",
       "image": "../../docs/eightfold-path/assets/12-leaving-raft.webp",
       "dimensions": [
         2752,
@@ -2128,7 +2088,6 @@ const BOOK = {
       "lines": [
         "希有諸人民，能度於彼岸；一切諸世間，徘徊遊此岸。"
       ],
-      "note": "",
       "image": null,
       "dimensions": null,
       "focusPanel": null,
@@ -2144,7 +2103,6 @@ const BOOK = {
       "lines": [
         "於此正法律，能善隨順者，斯等能度彼，生死難度岸。"
       ],
-      "note": "",
       "image": null,
       "dimensions": null,
       "focusPanel": null,

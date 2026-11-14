@@ -14,13 +14,12 @@ function showPage(index) {
   current = index;
   try { sessionStorage.setItem(storageKey, String(index)); } catch {}
   title.textContent = item.title;
-  $('#chapter-note').textContent = item.title + (item.note ? ' · ' + item.note : '');
-  $('#chapter-note').hidden = !item.image;
   $('#narration').replaceChildren(...item.lines.map(text => {
     const paragraph = document.createElement('p');
     paragraph.textContent = text;
     return paragraph;
   }));
+  renderImageOverlays(item);
   artFrame.hidden = !item.image;
   page.classList.toggle('text-scene', !item.image);
   if (item.image) {
@@ -29,6 +28,7 @@ function showPage(index) {
       tl: '左上格', tr: '右上格', bl: '左下格', br: '右下格'
     }[item.focusPanel] : '，原始插畫');
     artFrame.style.setProperty('--art-ratio', item.dimensions.join(' / '));
+    artFrame.style.setProperty('--art-ratio-number', String(item.dimensions[0] / item.dimensions[1]));
   }
   $('#panel-mask').hidden = !item.focusPanel;
   for (const panel of $('#panel-mask').children) {
@@ -51,7 +51,54 @@ function showPage(index) {
   if (window.scrollY) window.scrollTo(0, 0);
   const upcoming = pages.slice(index + 1).find(p => p.image && p.image !== item.image);
   if (upcoming) new Image().src = upcoming.image;
+  layoutArtwork();
 }
+
+let measuredScene = null;
+function renderImageOverlays(item) {
+  const plan = BOOK.scenes.find(scene => scene.id === item.scene).presentation;
+  const active = (plan.overlays || []).filter(overlay =>
+    item.subtitle >= (overlay.fromSubtitle || 1) && item.subtitle <= (overlay.throughSubtitle || Infinity));
+  page.classList.toggle('overlay-scene', Boolean(item.image && active.length));
+  $('#art-overlays').replaceChildren(...active.map(overlay => {
+    const element = document.createElement('div');
+    element.className = 'art-overlay';
+    element.dataset.overlayId = overlay.id;
+    element.dataset.backdrop = overlay.backdrop || 'none';
+    element.dataset.nowrap = String(Boolean(overlay.nowrap));
+    const variants = [['', overlay], ['portrait-', {...overlay, ...overlay.portrait}]];
+    for (const [prefix, variant] of variants) {
+      for (const key of ['x', 'y', 'width']) element.style.setProperty(`--${prefix}${key}`, variant[key] + '%');
+      element.style.setProperty(`--${prefix}align`, variant.align || 'left');
+      element.style.setProperty(`--${prefix}font`, `clamp(${variant.minFontPx}px, ${variant.fontSizeCqw}cqw, ${variant.maxFontPx}px)`);
+    }
+    element.style.lineHeight = overlay.lineHeight || 1.35;
+    element.append(...overlay.lines.map(text => {
+      const paragraph = document.createElement('p'); paragraph.textContent = text; return paragraph;
+    }));
+    return element;
+  }));
+  if (measuredScene !== item.scene) {
+    measuredScene = item.scene;
+    $('#caption-sizer').replaceChildren(...pages.filter(p => p.scene === item.scene).map(p => {
+      const wrapper = document.createElement('div');
+      wrapper.append(...p.lines.map(text => {const paragraph = document.createElement('p'); paragraph.textContent = text; return paragraph;}));
+      return wrapper;
+    }));
+  }
+}
+function layoutArtwork() {
+  if (!page.classList.contains('overlay-scene')) return;
+  const scene = $('.scene');
+  const captionHeight = $('#caption-sizer').getBoundingClientRect().height;
+  const scriptureHeight = $('.scripture').hidden ? 0 : $('.scripture').getBoundingClientRect().height;
+  scene.style.setProperty('--caption-space', captionHeight + 'px');
+  scene.style.setProperty('--scripture-space', scriptureHeight + 'px');
+  scene.style.setProperty('--image-space-height', Math.max(1, scene.clientHeight - captionHeight - scriptureHeight) + 'px');
+}
+new ResizeObserver(layoutArtwork).observe($('#caption-sizer'));
+window.addEventListener('resize', layoutArtwork);
+document.fonts.ready.then(layoutArtwork);
 
 const table = document.createElement('table');
 const head = table.createTHead().insertRow();
