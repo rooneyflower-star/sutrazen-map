@@ -31,3 +31,9 @@ Maintain the SutraZen Buddhist learning website and its interactive picture book
 
 ## Source of truth
 Actual repository files and verified live behavior govern implementation status. docs/HANDOFF.md records design decisions and outstanding work, not proof of deployment.
+
+## Buddhist source discovery
+- Actively research references rather than treating an unsuccessful search or network denial as proof that a source is absent.
+- For annotations to all four Chinese Āgamas, start at https://buddhaspace.org/main/modules/dokuwiki/ and follow the appropriate collection/volume/section. The site is not limited to 雜阿含; do not apply one collection's path pattern to another.
+- For Pali canon references, look for a verified Traditional Chinese translation and identify the translator; present Chinese access before comparison languages where available. Preserve distinct labels for ancient Chinese texts, modern translations, Pali originals and annotations.
+- If a provider is blocked, inspect its authoritative public data repository when available and clearly distinguish verified source content from an untested website URL. Do not ask the author to find material that can be researched independently.
