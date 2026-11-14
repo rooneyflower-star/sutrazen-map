@@ -96,3 +96,9 @@ Approved scope: recover and integrate the supplied preview, preserve all artwork
 - Standardized existing reference cards with edition/location metadata, pill buttons, original-text versus annotated-guide roles and explicit provider labels. Added matching 台大獅子吼 annotations to 雜阿含 cards using the same existing /agama/sub/<number>.html route pattern.
 - Chinese canon links are labeled 漢譯經文, annotations 註解導讀. Pali originals, modern Chinese/English translations and Chinese treatises retain distinct correct labels. No unrelated 七覺支／第713經 entry was added merely because it appears in the sample screenshot.
 - Scripture quotations, local source IDs, reader files and illustrations remain unchanged. Outbound provider retrieval may be blocked by network policy; syntactic link consistency and live local publication checks do not establish external-site availability.
+
+## 2026-11-14 — Complete Āgama annotations and Chinese SN 22.48
+- Corrected the earlier incomplete discovery: 台大獅子吼 covers all four Āgamas. Added the author's exact 增壹阿含 25.html and 中阿含象跡喻經 section URLs to Four Noble Truths source cards, preserving existing primary texts.
+- Located SN 22.48 Chinese text independently in SuttaCentral's authoritative sc-data repository (`html_text/zh/pli/sutta/sn/sn22/sn22.48.html`, author 莊春江), after direct provider access returned 403. Added Chinese-first access, explicit translator/language, and a faithful excerpt with Pali comparison from bilara-data root segment sn22.48:2.2. Kept existing English/Pali links.
+- Aligned the Bahiya source card with the same grouped actions and explicit Chinese translator. Moved its existing separate Pali link into the group without changing its destination or quotations.
+- Added durable research instructions in AGENTS.md and sources in docs/SOURCES.md. Direct external website/anchor retrieval remains unverified where blocked; database content verification is not described as a successful provider-site visit.
