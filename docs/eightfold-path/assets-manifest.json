@@ -1,0 +1,112 @@
+[
+  {
+    "path": "assets/01-darkness.webp",
+    "originalFilename": "IMG_0188.jpg",
+    "width": 2752,
+    "height": 1536,
+    "originalSha256": "064f50acf21dbb2ac28dc89170dd395996280a00ef7aedff87475168ef294a6e",
+    "sha256": "b106550123fa2ee7b581749bf00f1be765c6d40ca9ce91bf697af86a78da04c2",
+    "bytes": 220192,
+    "conversion": "WebP quality 92, original dimensions, no crop"
+  },
+  {
+    "path": "assets/02-right-view.webp",
+    "originalFilename": "IMG_0191.jpg",
+    "width": 2752,
+    "height": 1536,
+    "originalSha256": "19ec0d848223bc43423fffbdd10990ab9f5663ac8759e08fc57c77f9f2cf0618",
+    "sha256": "aa32613ad536f88ffbe6725c5d258735caf1858257a71b7e5197644a065daab8",
+    "bytes": 1286382,
+    "conversion": "WebP quality 92, original dimensions, no crop"
+  },
+  {
+    "path": "assets/03-right-intention.webp",
+    "originalFilename": "6AAA9E3B-5560-446C-921E-F83C498154DC.jpeg",
+    "width": 1536,
+    "height": 864,
+    "originalSha256": "2b5fca33b7f5753ad0ba7936050a88fe21e5903aa369c095ed341da9232ffcd7",
+    "sha256": "dd7758875789ccdfc7f60984277d0545c5f33317c8c0493a1a16a18e27a3d526",
+    "bytes": 632112,
+    "conversion": "WebP quality 92, original dimensions, no crop"
+  },
+  {
+    "path": "assets/04-unwholesome-actions.webp",
+    "originalFilename": "Gemini_Generated_Image_hp441hp441hp441h.jpg",
+    "width": 2752,
+    "height": 1536,
+    "originalSha256": "b811eaa91f8cb24e2d714b6a8bf98b0d727d947df3d5c4df29ae9b5850bc6bdb",
+    "sha256": "d2f5553f2f2912fc2bb11453474cf763aa03e1efe09c5a3089851d526697a725",
+    "bytes": 1035556,
+    "conversion": "WebP quality 92, original dimensions, no crop"
+  },
+  {
+    "path": "assets/05-wholesome-actions.webp",
+    "originalFilename": "Gemini_Generated_Image_ndu4okndu4okndu4.jpg",
+    "width": 2752,
+    "height": 1536,
+    "originalSha256": "efda3b5c7956ad8b4f2b86b7eb5b3778283b10fafb33698f9af052f0e63dde9d",
+    "sha256": "bac93ea7f3eecaf12efbabbd8d219d0007dc8cd4024b9d8eea334db8ac4f10a4",
+    "bytes": 1140948,
+    "conversion": "WebP quality 92, original dimensions, no crop"
+  },
+  {
+    "path": "assets/07-right-action-swans.webp",
+    "originalFilename": "Gemini_Generated_Image_nko2nznko2nznko2.jpg",
+    "width": 2752,
+    "height": 1536,
+    "originalSha256": "e7fb0084b611a89797017c84fa513528ddf1bd2adea31f8896aa09568f3d57db",
+    "sha256": "3c1348fbe62ee7457259c24a24ea22585a66b18c6405b099ce622d28ecb14d06",
+    "bytes": 1242242,
+    "conversion": "WebP quality 92, original dimensions, no crop"
+  },
+  {
+    "path": "assets/08-right-livelihood.webp",
+    "originalFilename": "Gemini_Generated_Image_yl4ifmyl4ifmyl4i.jpg",
+    "width": 2752,
+    "height": 1536,
+    "originalSha256": "3c9dc8cafc838c94a2ba03897e26fd8dfb4264e2d53db868d1d1815f052e0ee6",
+    "sha256": "2747c0bf2b6c468aec73b9156ed46dd86644de20d5fac445a3347e8b056d359d",
+    "bytes": 914706,
+    "conversion": "WebP quality 92, original dimensions, no crop"
+  },
+  {
+    "path": "assets/09-right-effort.webp",
+    "originalFilename": "Gemini_Generated_Image_olm57tolm57tolm5.jpg",
+    "width": 2752,
+    "height": 1536,
+    "originalSha256": "c7ccd0a925ee357839b9f5844bd46d07f88598c2fd6135c3d4ff818014ec1fe7",
+    "sha256": "8da5d7bb7ab9ff129ff7719d5112c7d9e3a777f2b191b97c1010e37d2e640d3c",
+    "bytes": 1134616,
+    "conversion": "WebP quality 92, original dimensions, no crop"
+  },
+  {
+    "path": "assets/10-right-mindfulness.webp",
+    "originalFilename": "Gemini_Generated_Image_l04pq3l04pq3l04p.jpg",
+    "width": 2752,
+    "height": 1536,
+    "originalSha256": "b1ddcf980c80f960e8515e27009a3a37f8614797de9c19d9d7caf6b30065b89c",
+    "sha256": "01c2206ad96482ff2b71f56da45e8ea38e26d2755c9c004d29a2371551d6a6a8",
+    "bytes": 835904,
+    "conversion": "WebP quality 92, original dimensions, no crop"
+  },
+  {
+    "path": "assets/11-right-concentration.webp",
+    "originalFilename": "Gemini_Generated_Image_bi1bvcbi1bvcbi1b.jpg",
+    "width": 2752,
+    "height": 1536,
+    "originalSha256": "1055edbb83fc33d732f665d806f2d4894fb6e89898cb75849e5dbdce768b2202",
+    "sha256": "a00b093370fb01b5fa9f6cdc4a477932f1ed749672153b34e7cc41bd013565e2",
+    "bytes": 918004,
+    "conversion": "WebP quality 92, original dimensions, no crop"
+  },
+  {
+    "path": "assets/12-leaving-raft.webp",
+    "originalFilename": "Gemini_Generated_Image_4nwfqx4nwfqx4nwf.jpg",
+    "width": 2752,
+    "height": 1536,
+    "originalSha256": "fcc95aeb93ce656fb1584e1d90a39f6c40a3cdcbb0df10a468f4928fe4f2c9c7",
+    "sha256": "1be2bbe3ddd0f0be1571bc260b0fd70e42f29f644bd660d49d2f6e0b0446d235",
+    "bytes": 1403200,
+    "conversion": "WebP quality 92, original dimensions, no crop"
+  }
+]
