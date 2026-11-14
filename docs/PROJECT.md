@@ -31,3 +31,6 @@ The twelve dependent origination picture book is being designed but no dedicated
 
 ## Important distinction
 This repository does not necessarily contain every asset or HTML draft discussed in ChatGPT. If a required draft is absent, ask the author to supply it; do not fabricate missing content.
+
+## Local twelve-link integration preview (2026-11-14)
+The unpushed preview branch adds `twelve-links/` with separate guide/reader files, original extracted assets, storyboard and manifest. It preserves 77 pages (18 narrative scenes plus afterword). This describes local implementation, not main or live publication; see docs/HANDOFF.md for verification and remaining review.
