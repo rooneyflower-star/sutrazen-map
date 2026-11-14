@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "name": "無明",
+    "endpoint_x": 61.3,
+    "endpoint_y": 29.5,
+    "label_x": 64,
+    "label_y": 25.5
+  },
+  {
+    "id": 2,
+    "name": "行",
+    "endpoint_x": 76.0,
+    "endpoint_y": 35.9,
+    "label_x": 80,
+    "label_y": 32.5
+  },
+  {
+    "id": 3,
+    "name": "識",
+    "endpoint_x": 85.2,
+    "endpoint_y": 49.5,
+    "label_x": 91,
+    "label_y": 48.3
+  },
+  {
+    "id": 4,
+    "name": "名色",
+    "endpoint_x": 83.0,
+    "endpoint_y": 65.1,
+    "label_x": 90.5,
+    "label_y": 66.8
+  },
+  {
+    "id": 5,
+    "name": "六入處",
+    "endpoint_x": 75.3,
+    "endpoint_y": 75.2,
+    "label_x": 80,
+    "label_y": 79
+  },
+  {
+    "id": 6,
+    "name": "觸",
+    "endpoint_x": 61.3,
+    "endpoint_y": 83.1,
+    "label_x": 63.5,
+    "label_y": 88
+  },
+  {
+    "id": 7,
+    "name": "受",
+    "endpoint_x": 39.0,
+    "endpoint_y": 83.1,
+    "label_x": 36.5,
+    "label_y": 88
+  },
+  {
+    "id": 8,
+    "name": "愛",
+    "endpoint_x": 25.2,
+    "endpoint_y": 76.0,
+    "label_x": 20.5,
+    "label_y": 79.8
+  },
+  {
+    "id": 9,
+    "name": "取",
+    "endpoint_x": 16.5,
+    "endpoint_y": 64.8,
+    "label_x": 8.5,
+    "label_y": 66.2
+  },
+  {
+    "id": 10,
+    "name": "有",
+    "endpoint_x": 16.7,
+    "endpoint_y": 47.8,
+    "label_x": 8.5,
+    "label_y": 46.2
+  },
+  {
+    "id": 11,
+    "name": "生",
+    "endpoint_x": 25.5,
+    "endpoint_y": 35.2,
+    "label_x": 20.0,
+    "label_y": 31.2
+  },
+  {
+    "id": 12,
+    "name": "老死",
+    "endpoint_x": 38.2,
+    "endpoint_y": 29.5,
+    "label_x": 35.5,
+    "label_y": 25.5
+  }
+]

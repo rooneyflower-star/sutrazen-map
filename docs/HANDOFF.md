@@ -1,6 +1,30 @@
 # SutraZen — current handoff
 
 Last updated: 2026-11-14
+Status: Twelve-link preview approved; user explicitly authorized production publication. Verify the Pages run for this release before claiming live deployment.
+
+## Current implementation
+- `twelve-links/` contains the native guide and reader, 77 pages (18 narrative scenes plus the original afterword), 18 original reader illustrations, cover, 5460×7170 Wheel of Life, storyboard and SHA-256 manifest.
+- The fourth shelf entry links to the book, guide and original scriptures; 14 books total, 4 readable, 10 locked. Existing three books, map, artwork and video embeds are preserved.
+- Fixed scripture-dialog navigation and keyboard navigation after button focus. Reading position survives guide navigation and orientation changes.
+- Static full-frame Wheel of Life has 12 outer labels at least 12px. The author accepted the image and requested fine adjustments to birth/name-and-form endpoints; revision two includes these and a Four Noble Truths-style 16:9 YouTube frame.
+- Removed the guide's trial badge and noindex directive for release. Reader noindex follows the established reader convention.
+
+## Verified before publication
+- All 77 pages at 390×844, 844×390, 768×1024 and 1024×768: illustrations, page numbers, scripture content, page buttons, keyboard, simulated swipe, scene menu, orientation retention and scripture dialog navigation.
+- Original BOOK data and image hashes preserved; native local paths/anchors and fourth shelf entry checked. Revised coordinates and 16:9 video layout checked at four sizes.
+- Downloadable single-file trial routing tested over local HTTP. Production reader does not use the trial's iframe packaging.
+
+## Remaining verification and release record
+- Real iPad/Safari and actual external YouTube playback were not tested in this environment. External scripture and independent image source/license records remain unverified; original credits are preserved.
+- Publication is explicitly authorized by the user, after preview review. This document records approval and implementation, not evidence of a completed Pages run.
+- Supply a ZIP from the exact published commit and report the deployment result. If Notion tools are absent, provide pending text for https://www.notion.so/40bcf2ef57db81658247c1e8268c3ccd and clearly state it has not been written.
+
+---
+
+# Earlier design and preview history
+
+Last updated: 2026-11-14
 Status: Design notes prepared; no coding or deployment authorized by this document alone.
 
 ## Current priority: Twelve Dependent Origination (十二因緣) picture book
@@ -35,3 +59,22 @@ After each implementation task, record: approved scope, changed files, tests per
 - Exact final label positions and source artwork resolution
 - Final HTML/JS implementation
 - Live deployment and tablet behavior
+
+## 2026-11-14 — 十二因緣整合試閱（本地，等待作者確認）
+
+Approved scope: recover and integrate the supplied preview, preserve all artwork and pages, fix defects, and prepare a reviewable trial before any publication.
+
+- Added `twelve-links/`: native guide/book pages, separate CSS/JS/data, extracted original assets, a 77-row storyboard and SHA-256 manifest. No iframe is needed for normal website reading.
+- Preserved the exact BOOK data: 18 narrative scenes (76 pages) plus the original afterword (page 77 / scene 19). Preserved all 18 reader illustration hashes, the original cover and 5460×7170 Wheel of Life.
+- Fixed scripture-dialog navigation to real guide anchors and keyboard arrows while a navigation button retains focus. Session reading position survives guide/book navigation.
+- Kept the full static Wheel of Life at its natural ratio. Adjusted outer-ring leader endpoints and made all 12 labels at least 12px, without overlapping labels at tested widths. Final visual alignment remains subject to author review.
+- Prepared the fourth shelf entry and readable count in the local branch; other books, artwork, map and videos are unchanged.
+- Local Chromium tested all 77 pages at 390×844, 844×390, 768×1024 and 1024×768, including image loading, scripture content, keyboard/buttons, simulated swipes, scene menu, orientation retention and scripture-dialog links. Downloadable single-file preview was separately tested over local HTTP, including its parent/iframe scripture routing.
+- Preview-only single HTML packaging uses an iframe for portability; production directory uses normal links. Browser policy blocked file:// testing, so offline file execution is not claimed as verified.
+- Not verified: real iPad/Safari, independent image license/source records and all external reference sites. Existing credits retained; no publication authorized until author confirms trial.
+- Status: local preview branch only; no push, PR, production merge or deployment performed. Next: author reviews trial, labels and image credits; then explicitly approves publication.
+
+### Preview follow-up: wheel endpoint corrections and consistent video UI
+- Author approved the image, requesting the birth endpoint move slightly inward to its sector boundary and the name-and-form endpoint move outward. Updated only those two endpoints in both the rendered SVG and coordinate data; other labels/artwork remain unchanged.
+- Added the same 16:9 lazy-loaded YouTube iframe component used by the Four Noble Truths guide, plus a direct YouTube fallback link, for video yaWXpSQqOx4.
+- Rebuilt the downloadable trial. This remains an unpushed local preview, awaiting confirmation before publication. Video layout can be checked locally; external playback depends on YouTube/network access and is not claimed unless verified.

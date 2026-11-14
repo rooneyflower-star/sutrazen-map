@@ -1,0 +1,106 @@
+{
+  "source": "SutraZen_Twelve_Links_Codex_Handoff.zip",
+  "wheel_rights": "Source preview credits LOC / Wikimedia Commons, Public Domain Mark 1.0; independent verification pending",
+  "assets": [
+    {
+      "path": "assets/scene-01.webp",
+      "sha256": "4f51c8d834a0e487660fdfa4edbd130157e283b7f9b344fd0e840ae54c511843",
+      "source": "Recovered preview IMAGE_MAP: ../assets/scene-01.webp"
+    },
+    {
+      "path": "assets/scene-04.webp",
+      "sha256": "9a65c3269c9307bfeff38268c60e6371a7a265e850a91fbdfbf910d665a86279",
+      "source": "Recovered preview IMAGE_MAP: ../assets/scene-04.webp"
+    },
+    {
+      "path": "assets/scene-15.webp",
+      "sha256": "0b3388a102bef755628f8c3cd8e6c3d6c0a6e3bd363284d78861f9b2e2c487ee",
+      "source": "Recovered preview IMAGE_MAP: ../assets/scene-15.webp"
+    },
+    {
+      "path": "assets/scene-12.webp",
+      "sha256": "e123b4465f767cfa635ea448ea8ea1453a7775558a179a944001b315ce64c348",
+      "source": "Recovered preview IMAGE_MAP: ../assets/scene-12.webp"
+    },
+    {
+      "path": "assets/scene-05.webp",
+      "sha256": "2cc88db7e69d0fd37e5fb5c09c3d5478c27e7c447b0aa3475908d37d3504e705",
+      "source": "Recovered preview IMAGE_MAP: ../assets/scene-05.webp"
+    },
+    {
+      "path": "assets/scene-09.webp",
+      "sha256": "233fdbd3913421e277ba4e90edd7bc2f32e13ed5d1c5e9e20473cb3425e322ac",
+      "source": "Recovered preview IMAGE_MAP: ../assets/scene-09.webp"
+    },
+    {
+      "path": "assets/scene-11.webp",
+      "sha256": "9caac3bb8ccc464903ec8f9194c5bc2c2d0ab81fcbbd33ebb641d456e6103b95",
+      "source": "Recovered preview IMAGE_MAP: ../assets/scene-11.webp"
+    },
+    {
+      "path": "assets/scene-11-right-dark.webp",
+      "sha256": "fe9be537d29856200bed7474da5781b99e229417cb1a28eb16e1f06185bd806b",
+      "source": "Recovered preview IMAGE_MAP: ../assets/scene-11-right-dark.webp"
+    },
+    {
+      "path": "assets/scene-07.webp",
+      "sha256": "2f2441648ded164c88547797aee3c18657849003c05dc029346405132886f86d",
+      "source": "Recovered preview IMAGE_MAP: ../assets/scene-07.webp"
+    },
+    {
+      "path": "assets/scene-14.webp",
+      "sha256": "386c322718203f9975c71ccf49fe4f643ae7204214dd6e2ae25ea74b1a448fdc",
+      "source": "Recovered preview IMAGE_MAP: ../assets/scene-14.webp"
+    },
+    {
+      "path": "assets/scene-06.webp",
+      "sha256": "fa68670819f4be98334eaaabe9d3b93e59de6cdc804d22e3eff603a89f9a1d29",
+      "source": "Recovered preview IMAGE_MAP: ../assets/scene-06.webp"
+    },
+    {
+      "path": "assets/scene-13.webp",
+      "sha256": "8fdee53fe1415f058d7fd6efca5e2b4545dcd5b66485a2c42d29e52eed26f8ca",
+      "source": "Recovered preview IMAGE_MAP: ../assets/scene-13.webp"
+    },
+    {
+      "path": "assets/scene-17.webp",
+      "sha256": "ec2668b7f5f1faf46c1fbb5e335b4e3a07e6f893b39c1e2c03b870170cfb9104",
+      "source": "Recovered preview IMAGE_MAP: ../assets/scene-17.webp"
+    },
+    {
+      "path": "assets/scene-03.webp",
+      "sha256": "38a6e7d1d07b83ed331116a0d7f50305c0aa2341d6b8f5aed809b57bb587643d",
+      "source": "Recovered preview IMAGE_MAP: ../assets/scene-03.webp"
+    },
+    {
+      "path": "assets/scene-08.webp",
+      "sha256": "3b60969a6a3a3c7df30e3bf28cbc84dd1e7e51fecbb8fb60319c35e83977c84e",
+      "source": "Recovered preview IMAGE_MAP: ../assets/scene-08.webp"
+    },
+    {
+      "path": "assets/scene-16.webp",
+      "sha256": "3b5b655250fbc5e3093d7c7dd4e647fb556eefe866f6214ea91c7d324a721455",
+      "source": "Recovered preview IMAGE_MAP: ../assets/scene-16.webp"
+    },
+    {
+      "path": "assets/scene-02.webp",
+      "sha256": "ff6111acfe31de50d8043d40c1192221feda203d8846e165804108afea0406a7",
+      "source": "Recovered preview IMAGE_MAP: ../assets/scene-02.webp"
+    },
+    {
+      "path": "assets/scene-10.webp",
+      "sha256": "d331bef405e0765b3206db291d801ad52e65052d5f1627fca908f002e660ffe2",
+      "source": "Recovered preview IMAGE_MAP: ../assets/scene-10.webp"
+    },
+    {
+      "path": "assets/wheel-of-life.jpg",
+      "sha256": "6ccfe4350f8be1aee6adadb783fb8baa31468be44b9f19900bae2a43e5aaa5f8",
+      "source": "Recovered handoff: wheel-of-life.jpg"
+    },
+    {
+      "path": "cover.webp",
+      "sha256": "4f51c8d834a0e487660fdfa4edbd130157e283b7f9b344fd0e840ae54c511843",
+      "source": "Recovered handoff: twelve-links-cover.webp"
+    }
+  ]
+}
