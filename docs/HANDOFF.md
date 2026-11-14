@@ -1,7 +1,17 @@
 # SutraZen — current handoff
 
 Last updated: 2026-11-14
-Status: **八正道與十善業道試閱完成；僅分支／PR，未發布正式站。**
+Status: **八正道與十善業道已獲作者明確發布授權；發布記錄見 PR #11 與對應 GitHub Pages 部署結果。**
+
+## 2026-11-14 — 八正道發布授權與交付
+
+- 作者明確指示「你直接發布吧，我看有問題再來改」，授權把本次新增內容合併 main 並發布；此最新指示取代本頁先前的試閱等待狀態。
+- 發布 PR：https://github.com/rooneyflower-star/sutrazen-map/pull/11 。移除新主題導讀的 noindex；閱讀器沿現有慣例保留。故事、圖片、控制與所有舊書保持試閱測試版本。
+- 正式入口：`eightfold-path/`（導讀）、`eightfold-path/book/`（110頁繪本）、首頁第05本與八正道心智圖說明窗。
+- 合併與部署須以 PR 的 merge commit 及該 SHA 的 Pages 成功結果為準；不能只因 git push 成功而聲稱已上線。發布後另外驗證正式網址與新書操作。
+- 每次正式發布的 ZIP 使用精確 merge commit。前次對話附件下載失敗，這次另提供 GitHub `/archive/<mergeSHA>.zip` 固定版本下載入口，並保留本地檔與 SHA-256。
+- 此工作環境未提供 Notion 工具，尚未寫入改版頁。待補記文字保存於 `docs/releases/eightfold-path-notion.md`，不要把提供文字當成已更新 Notion。
+- 暫定封面、白話校訂建議、實機 Safari、外部影片及註解深層定位等原有待確認項目仍保留，見下方。
 
 ## 本次範圍與基準
 
@@ -36,7 +46,7 @@ Status: **八正道與十善業道試閱完成；僅分支／PR，未發布正�
 - 本環境缺少 `open_cloud_preview` 與桌面 JS 工具，不能提供經驗證的外部即時預覽 URL。ZIP 附本機 HTTP 啟動方式；file:// 被瀏覽器政策封鎖，未宣稱雙擊 HTML 已測試。
 - 缺貓群片頭封面原圖，暫以正見地圖配 HTML 書名，內頁圖像完整。待作者確認封面與另列的白話校訂建議。
 - 實體 iPad/Safari、外部 YouTube 播放及台大獅子吼深層定位未驗證。
-- **等待作者試閱確認及另行發布指示；不要沿用以前其他繪本的發布授權。** 正式發布前移除新導讀 noindex、重新確認最新 main，發布時另附正式版 ZIP 並依既有規則更新 Notion 改版頁；無工具時交付待補記文字。
+- 作者已就本書明確授權正式發布，見本頁最新發布紀錄；上線結果以 PR #11 與 Pages 為準。原試閱版本完整保留於 commit `6c00958`。
 
 ---
 

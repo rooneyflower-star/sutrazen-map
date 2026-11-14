@@ -13,7 +13,7 @@
 - four-truths/ — Four Noble Truths picture book, including assets/ and book/
 - six-senses/ — six senses picture book, including book/ and cover.webp
 - twelve-links/ — twelve-link picture book, guide, static Wheel of Life, 77-page data, storyboard and original extracted assets
-- eightfold-path/ — preview implementation: 110-page Eightfold Path / Ten Wholesome Actions reader and guide; original 13-scene handoff and 11 illustrations in docs/eightfold-path/
+- eightfold-path/ — Eightfold Path / Ten Wholesome Actions implementation: 110-page reader and guide; original 13-scene handoff and 11 illustrations in docs/eightfold-path/
 - README.md
 
 The twelve-link reader is implemented in twelve-links/ and preserves 77 pages: 18 narrative scenes plus an afterword. The author approved publication on 2026-11-14. Verify the corresponding GitHub Pages deployment before claiming live availability.
@@ -37,5 +37,5 @@ This repository does not necessarily contain every asset or HTML draft discussed
 ## Twelve-link release approval (2026-11-14)
 The author reviewed two preview revisions and explicitly requested publication. The approved implementation includes native guide/book pages, original artwork, corrected scripture navigation and keyboard behavior, refined birth/name-and-form endpoints and the Four Noble Truths-style YouTube preview. See docs/HANDOFF.md for test coverage and remaining limitations.
 
-## Eightfold Path preview (2026-11-14)
-Implemented on `feat/eightfold-path-preview` from main `0236fca`, incorporating handoff `e121f3c`. Shelf #05 and the existing 八正道 map dialog link to the guide/reader in this branch. The four released books and shared guide styles remain unchanged. No publication authorized for this preview; production still reads main. See docs/eightfold-path/verification.md for source checks, pairing choices and separate editorial suggestions.
+## Eightfold Path release approval (2026-11-14)
+Implemented on `feat/eightfold-path-preview` from main `0236fca`, incorporating handoff `e121f3c`. Shelf #05 and the existing 八正道 map dialog link to the guide/reader in this branch. The four released books and shared guide styles remain unchanged. The author explicitly authorized direct publication of this version on 2026-11-14. PR #11 targets main; verify its merge commit and corresponding Pages deployment before claiming live availability. See docs/eightfold-path/verification.md for source checks, pairing choices and separate editorial suggestions.
