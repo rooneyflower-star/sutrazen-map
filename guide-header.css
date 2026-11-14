@@ -1,0 +1,40 @@
+/* Shared by all picture-book topic guides. Reading controls live in book/. */
+.guide-header {
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #d7dacc;
+  background: #fffdf7;
+  color: #234f41;
+  font-family: system-ui, -apple-system, "Noto Sans TC", sans-serif;
+}
+.guide-header .guide-header-inner {
+  box-sizing: border-box;
+  width: min(calc(100% - 40px), 960px);
+  min-height: 62px;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.guide-header .guide-brand {
+  flex: none;
+  color: #234f41;
+  font: 700 20px/1.5 Georgia, serif;
+}
+.guide-header .guide-return {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding-block: 8px;
+  box-sizing: border-box;
+  color: #234f41;
+  font: 400 14.4px/1.6 system-ui, -apple-system, "Noto Sans TC", sans-serif;
+  text-align: right;
+  text-decoration: underline;
+  text-underline-offset: .22em;
+}
+.guide-header .guide-return:focus-visible {
+  outline: 3px solid #895927;
+  outline-offset: 4px;
+}
