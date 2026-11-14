@@ -90,3 +90,9 @@ Approved scope: recover and integrate the supplied preview, preserve all artwork
 - Added root guide-ui.css for common content width, title/lead typography, spacing and video presentation, while retaining guide-header.css for the single return-to-map header.
 - Removed extra same-page shortcuts outside the scripture sections, repeated end-of-guide reading CTA, source index shortcuts and separate under-video links. Primary book covers, real scripture sections, source citations within them, shelf and reader navigation remain.
 - Guide content, scripture quotations and reader files/artwork must be preserved; validate all four at phone, tablet and desktop widths before release. Real iPad/Safari and external YouTube playback remain separate unverified checks unless exercised.
+
+## 2026-11-14 — Consistent scripture source cards
+- User authorized publication of the screenshot's source-card recommendation. Shared ChatGPT link was blocked by environment CONNECT 403; implementation follows the visible screenshot, not an unverified claim of reading the shared response.
+- Standardized existing reference cards with edition/location metadata, pill buttons, original-text versus annotated-guide roles and explicit provider labels. Added matching 台大獅子吼 annotations to 雜阿含 cards using the same existing /agama/sub/<number>.html route pattern.
+- Chinese canon links are labeled 漢譯經文, annotations 註解導讀. Pali originals, modern Chinese/English translations and Chinese treatises retain distinct correct labels. No unrelated 七覺支／第713經 entry was added merely because it appears in the sample screenshot.
+- Scripture quotations, local source IDs, reader files and illustrations remain unchanged. Outbound provider retrieval may be blocked by network policy; syntactic link consistency and live local publication checks do not establish external-site availability.

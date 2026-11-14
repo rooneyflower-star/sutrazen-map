@@ -23,3 +23,14 @@
 .topic-guide .source-entry, .topic-guide .sutra-card { margin-top:16px; padding:clamp(16px,3vw,26px); background:#fffdf7; border:1px solid #d7dacc; border-radius:10px; }
 .topic-guide .source-entry h3, .topic-guide .sutra-card h2 { font-family:inherit; font-size:1.12rem; line-height:1.35; margin:0 0 12px; }
 .topic-guide .book-preview > .intro { display:block; padding:0; margin:0 0 18px; border:0; font-size:1rem; line-height:1.75; }
+/* Source roles are distinct: original text, translation and annotated guide. */
+.topic-guide .source-meta { margin:4px 0 6px; color:#526159; font-size:.95rem; }
+.topic-guide .source-location { margin:0 0 16px; color:#526159; font-size:.9rem; overflow-wrap:anywhere; }
+.topic-guide .source-actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:20px; }
+.topic-guide .source-actions .source-button { box-sizing:border-box; flex:1 1 170px; display:inline-flex; align-items:center; justify-content:center; gap:9px; min-height:48px; padding:9px 16px; border:1px solid #c8cec5; border-radius:999px; background:#fffdf7; color:#24352d; font-size:1.05rem; font-weight:700; line-height:1.5; text-align:center; text-decoration:none; }
+.topic-guide .source-actions .source-button--annotation { color:#526159; }
+.topic-guide .source-actions .source-button:hover { background:#f0f2e9; border-color:#849c83; }
+.topic-guide .source-actions .source-button:focus-visible { outline:3px solid #895927; outline-offset:3px; }
+.topic-guide .source-button svg { flex:none; width:22px; height:22px; }
+.topic-guide .source-providers { margin-top:14px; color:#526159; font-size:.9rem; overflow-wrap:anywhere; }
+.topic-guide .source-providers p { margin:5px 0; }
