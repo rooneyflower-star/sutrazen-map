@@ -84,3 +84,9 @@ Approved scope: recover and integrate the supplied preview, preserve all artwork
 - All four guides use the same root `guide-header.css` and header markup. The twelve-link guide no longer has a separate three-item header menu; its scripture and reading links remain in page content and the reader.
 - Scope is guide headers only. Reading controls, book text/data, illustrations, map, shelf and videos remain unchanged.
 - Validate shared styling at mobile and desktop widths, root return link, and each guide-to-reader entry before deployment. Actual Pages status must be checked; real iPad/Safari remains unverified.
+
+## 2026-11-14 — Common guide UI and real video previews
+- User requested direct publication after finding Five Aggregates used a green link placeholder instead of a YouTube iframe. Replaced it with the same real 16:9 lazy-loaded embed used in all four guides.
+- Added root guide-ui.css for common content width, title/lead typography, spacing and video presentation, while retaining guide-header.css for the single return-to-map header.
+- Removed extra same-page shortcuts outside the scripture sections, repeated end-of-guide reading CTA, source index shortcuts and separate under-video links. Primary book covers, real scripture sections, source citations within them, shelf and reader navigation remain.
+- Guide content, scripture quotations and reader files/artwork must be preserved; validate all four at phone, tablet and desktop widths before release. Real iPad/Safari and external YouTube playback remain separate unverified checks unless exercised.
