@@ -1,6 +1,50 @@
 # SutraZen — current handoff
 
 Last updated: 2026-11-14
+Status: **八正道與十善業道試閱完成；僅分支／PR，未發布正式站。**
+
+## 本次範圍與基準
+
+- 實作分支 `feat/eightfold-path-preview`，從最新 main `0236fca0c8ca0edbe3972bf51e4211ec33fd4e2f` 起作。已 fetch 並核對交接分支 `content/eightfold-path-handoff` 的 commit `e121f3c1f78535243ffbf75599a7f4e1e272e0fa`，只帶入 `docs/eightfold-path/`。
+- 完整讀取最新 main 的四份規則／專案文件及交接 README、Markdown/JSON 分鏡、manifest；不依賴過去對話或 Notion 啟動實作。原交接檔原樣保留。
+
+## 完成內容
+
+- `eightfold-path/` 主題導讀、真實 YouTube 預覽（wabgCGL-Cfk）、12張經典卡；沿用 `guide-header.css`、`guide-ui.css`，右上只保留「回三十七道品修道地圖」，沒有新增額外快捷列或影片下重複連結。
+- `eightfold-path/book/` 沿用最新十二因緣的橫直式、左右／底部控制、目錄、頁碼、經文展開、來源、返回與 session 閱讀位置。故事與原經均為可選取 HTML 文字。
+- 13段、110筆原字幕依序製成110頁；11張正式原圖尺寸、大小與 SHA-256 全符，沒有重繪、刪鏡或 Base64。正志使用指定高清圖，正命完整末句保留；05/06段共用善行四格，13段為文字總結。
+- 四格以 HTML 遮罩依字幕聚焦：每頁一格亮、三格暗；與原圖共同比例，未裁切圖像。
+- 首頁第05本新增閱讀／導讀／原經，書架保留14本順序，分支內5可讀、9鎖定；八正道心智圖原說明窗增加導讀入口，原影片和既有道路連線保留。
+- 現有四本閱讀器／導讀／插畫及共用樣式全部保持位元組相同。GitHub Pages 設定仍為 main 根目錄。
+
+## 經文與校訂
+
+- 12部參考經從 SuttaCentral 官方公開典籍資料核對，固定 commit 及雜湊見 `docs/eightfold-path/verified-sources.json`。片尾偈頌確定為雜阿含771。
+- 下緣選文按段落主題配對，未假稱已復刻影片逐句經文時間。原故事、原分鏡轉錄、原典節錄與建議改寫各自分開。
+- 鐵槍、世俗／出世間精進與正念、正定、筏喻的具體待校建議，見 `docs/eightfold-path/verification.md`；未擅自套用到原110筆字幕。
+- 台大獅子吼直接存取遭 CONNECT 403；中阿含註解先提供明標四阿含總入口，深層經文定位待後續驗證，沒有套用雜阿含路徑猜測。
+
+## 已通過的驗證
+
+- Chromium 觸控模擬390×844、844×390、768×1024、1024×768，各110頁，共440次頁面檢查：全文、插畫、頁碼、三暗一亮與長寬比、無水平溢出。
+- 翻頁、首尾停用、鍵盤、滑動、目錄、經文捲動不誤翻、橫式對話框／來源跳轉、方向切換／重載／返回保留頁數。
+- 書架與心智圖新入口，以及既有四本的開書、翻頁與返回。建置／完整性腳本、JS語法與 diff 空白檢查通過。測試命令和範圍見 verification.md。
+
+## 交付與剩餘項目
+
+- 本次提供試閱分支／PR、完整目錄 ZIP 與四格焦點示範。導讀入口 `eightfold-path/`，閱讀器入口 `eightfold-path/book/`。
+- 本環境缺少 `open_cloud_preview` 與桌面 JS 工具，不能提供經驗證的外部即時預覽 URL。ZIP 附本機 HTTP 啟動方式；file:// 被瀏覽器政策封鎖，未宣稱雙擊 HTML 已測試。
+- 缺貓群片頭封面原圖，暫以正見地圖配 HTML 書名，內頁圖像完整。待作者確認封面與另列的白話校訂建議。
+- 實體 iPad/Safari、外部 YouTube 播放及台大獅子吼深層定位未驗證。
+- **等待作者試閱確認及另行發布指示；不要沿用以前其他繪本的發布授權。** 正式發布前移除新導讀 noindex、重新確認最新 main，發布時另附正式版 ZIP 並依既有規則更新 Notion 改版頁；無工具時交付待補記文字。
+
+---
+
+# Prior handoff and release history
+
+# SutraZen — current handoff
+
+Last updated: 2026-11-14
 Status: Twelve-link preview approved; user explicitly authorized production publication. Verify the Pages run for this release before claiming live deployment.
 
 ## Current implementation

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-Hant-TW"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex"><title>八正道與十善業道｜SutraZen 翻頁繪本</title>
+<link rel="stylesheet" href="book.css"><script src="book-data.js" defer></script><script src="book.js" defer></script></head>
+<body>
+<header class="top">
+  <a href="../"><span class="portrait-label">‹ 八正道與十善業道導讀</span><span class="landscape-only">‹ 回簡介</span></a>
+  <span>SutraZen · 佛法繪本</span>
+</header>
+<main class="reader">
+  <h1 class="sr-only">八正道與十善業道翻頁繪本</h1>
+  <article class="page" aria-labelledby="page-title">
+    <div class="scene">
+      <h2 id="page-title" class="sr-only">啟程｜黑暗中的雙眼</h2>
+      <div class="story band" id="caption" aria-live="polite" aria-atomic="true"><p id="chapter-note" class="chapter-note"></p><div id="narration"></div></div>
+      <div id="art-frame">
+        <img id="art" src="../../docs/eightfold-path/assets/01-darkness.webp" alt="黑暗裡，小貓睜開眼睛。" draggable="false" fetchpriority="high">
+        <div id="panel-mask" aria-hidden="true" hidden><span data-panel="tl"></span><span data-panel="tr"></span><span data-panel="bl"></span><span data-panel="br"></span></div>
+      </div>
+      <div id="summary" hidden></div>
+      <div class="scripture band">
+        <div class="verse-body" tabindex="0" role="region" aria-label="本頁經文，可捲動閱讀"><blockquote id="verse"></blockquote></div>
+        <a id="source-link" href="../#sources">查看經典出處</a>
+      </div>
+    </div>
+  </article>
+  <button id="open-verse" class="landscape-only" type="button" aria-haspopup="dialog">本頁經文</button>
+  <nav class="controls" aria-label="繪本翻頁" hidden>
+    <button id="previous" type="button" aria-label="上一頁" disabled>←<span class="portrait-label"> 上一頁</span></button>
+    <div class="position">
+      <label class="sr-only" for="page-select">選擇分鏡</label>
+      <select id="page-select"></select>
+      <span class="landscape-only contents-label" aria-hidden="true">目錄 ▾</span>
+      <span id="position-text" aria-live="polite"></span>
+    </div>
+    <button id="next" type="button" aria-label="下一頁"><span class="portrait-label">下一頁 </span>→</button>
+  </nav>
+  <div class="reading-links"><a href="../#sources">閱讀原經</a></div>
+  <p class="hint" id="hint" hidden>在畫面上左右滑動，也可以使用方向鍵翻頁。</p>
+  <noscript><p class="hint">啟用 JavaScript 即可翻頁，也可<a href="../#video">觀看原版影片</a>。</p></noscript>
+</main>
+<dialog id="verse-dialog" aria-labelledby="verse-title">
+  <div class="verse-sheet">
+    <header>
+      <h2 id="verse-title">本頁經文</h2>
+      <form method="dialog"><button type="submit" autofocus>關閉</button></form>
+    </header>
+    <div class="verse-scroll">
+      <blockquote id="dialog-verse"></blockquote>
+      <a id="dialog-source">查看經典出處</a>
+    </div>
+  </div>
+</dialog>
+</body>
+</html>
