@@ -12,9 +12,10 @@
 - five-aggregates/ — five aggregates picture book, including book/ and storyboard.csv
 - four-truths/ — Four Noble Truths picture book, including assets/ and book/
 - six-senses/ — six senses picture book, including book/ and cover.webp
+- twelve-links/ — twelve-link picture book, guide, static Wheel of Life, 77-page data, storyboard and original extracted assets
 - README.md
 
-The twelve dependent origination picture book is being designed but no dedicated directory was present at the repository root when checked on 2026-11-14. Do not infer its source files or publication status.
+The twelve-link reader is implemented in twelve-links/ and preserves 77 pages: 18 narrative scenes plus an afterword. The author approved publication on 2026-11-14. Verify the corresponding GitHub Pages deployment before claiming live availability.
 
 ## Visual and reading experience
 - Picture-book visual language: gentle hand-drawn children's illustration, recurring kitten character where appropriate, 16:9 artwork.
@@ -32,5 +33,5 @@ The twelve dependent origination picture book is being designed but no dedicated
 ## Important distinction
 This repository does not necessarily contain every asset or HTML draft discussed in ChatGPT. If a required draft is absent, ask the author to supply it; do not fabricate missing content.
 
-## Local twelve-link integration preview (2026-11-14)
-The unpushed preview branch adds `twelve-links/` with separate guide/reader files, original extracted assets, storyboard and manifest. It preserves 77 pages (18 narrative scenes plus afterword). This describes local implementation, not main or live publication; see docs/HANDOFF.md for verification and remaining review.
+## Twelve-link release approval (2026-11-14)
+The author reviewed two preview revisions and explicitly requested publication. The approved implementation includes native guide/book pages, original artwork, corrected scripture navigation and keyboard behavior, refined birth/name-and-form endpoints and the Four Noble Truths-style YouTube preview. See docs/HANDOFF.md for test coverage and remaining limitations.
